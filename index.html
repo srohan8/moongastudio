@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Moonga — Independent Game & App Studio</title>
+  <meta name="description" content="Moonga is an independent studio making thoughtful apps and folklore-inspired games. Home of Flow and Lungiman."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --night: #0E0C0A;
+      --deep: #1A1610;
+      --warm-brown: #2E2418;
+      --gold: #C8A96E;
+      --gold-dim: rgba(200,169,110,0.18);
+      --gold-line: rgba(200,169,110,0.25);
+      --cream: #F0E8D8;
+      --muted: #7A6E5E;
+      --text: #C8BFB0;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      font-weight: 300;
+      background: var(--night);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── GRAIN OVERLAY ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 1000;
+      opacity: 0.5;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.4rem 3rem;
+      background: rgba(14,12,10,0.85);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--gold-line);
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+    }
+
+    .nav-logo {
+      width: 32px;
+      height: 32px;
+      object-fit: cover;
+      object-position: center 30%;
+      border-radius: 6px;
+    }
+
+    .nav-wordmark {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 400;
+      letter-spacing: 0.22em;
+      color: var(--cream);
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.75rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--gold); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 7rem 2rem 5rem;
+      position: relative;
+    }
+
+    .hero-glow {
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(200,169,110,0.07) 0%, transparent 70%);
+      pointer-events: none;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .studio-owl {
+      width: 120px;
+      height: 150px;
+      object-fit: contain;
+      margin-bottom: 1.5rem;
+      animation: owlFloat 6s ease-in-out infinite;
+      filter: drop-shadow(0 8px 32px rgba(200,169,110,0.18));
+    }
+
+    .hero-eyebrow {
+      font-size: 0.72rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.2rem;
+      opacity: 0.8;
+      animation: fadeUp 1s 0.1s ease both;
+    }
+
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3.5rem, 9vw, 7rem);
+      font-weight: 300;
+      letter-spacing: 0.12em;
+      line-height: 1;
+      color: var(--cream);
+      text-transform: uppercase;
+      animation: fadeUp 1s 0.2s ease both;
+    }
+
+    .hero-sub {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 420px;
+      margin: 1.8rem auto 0;
+      line-height: 1.9;
+      animation: fadeUp 1s 0.35s ease both;
+    }
+
+    .hero-divider {
+      width: 40px;
+      height: 1px;
+      background: var(--gold-line);
+      margin: 2.5rem auto;
+      animation: fadeUp 1s 0.45s ease both;
+    }
+
+    /* ── APP CARDS ── */
+    .apps {
+      padding: 2rem 2rem 8rem;
+      position: relative;
+    }
+
+    .apps-label {
+      text-align: center;
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 3rem;
+      animation: fadeUp 1s 0.5s ease both;
+    }
+
+    .app-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      max-width: 820px;
+      margin: 0 auto;
+      animation: fadeUp 1s 0.6s ease both;
+    }
+
+    .app-card {
+      display: block;
+      text-decoration: none;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid var(--gold-line);
+      position: relative;
+      transition: transform 0.3s ease, border-color 0.3s;
+    }
+
+    .app-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(200,169,110,0.5);
+    }
+
+    /* Flow card */
+    .card-flow {
+      background: linear-gradient(145deg, #1E1C18 0%, #2A2418 100%);
+    }
+
+    .card-flow-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 20% 80%, rgba(200,184,154,0.1) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 50% at 80% 20%, rgba(200,184,154,0.06) 0%, transparent 60%);
+    }
+
+    /* Lungiman card */
+    .card-lungiman {
+      background: linear-gradient(145deg, #1A0E0E 0%, #2A1008 100%);
+    }
+
+    .card-lungiman-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 80% 80%, rgba(180,40,20,0.18) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 50% at 20% 20%, rgba(200,130,20,0.12) 0%, transparent 60%);
+    }
+
+    .card-inner {
+      position: relative;
+      z-index: 1;
+      padding: 2.5rem;
+      min-height: 320px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card-tag {
+      font-size: 0.66rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      display: inline-block;
+      margin-bottom: 1.5rem;
+      align-self: flex-start;
+    }
+
+    .card-flow .card-tag {
+      background: rgba(200,184,154,0.12);
+      color: #C8B89A;
+      border: 1px solid rgba(200,184,154,0.25);
+    }
+
+    .card-lungiman .card-tag {
+      background: rgba(200,80,20,0.15);
+      color: #E07040;
+      border: 1px solid rgba(200,80,20,0.25);
+    }
+
+    .card-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.6rem;
+      font-weight: 300;
+      letter-spacing: 0.06em;
+      line-height: 1.1;
+      margin-bottom: 0.8rem;
+    }
+
+    .card-flow .card-title { color: #E8DCC8; }
+    .card-lungiman .card-title { color: #F0C878; }
+
+    .card-desc {
+      font-size: 0.87rem;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+
+    .card-flow .card-desc { color: rgba(200,184,154,0.65); }
+    .card-lungiman .card-desc { color: rgba(220,160,80,0.6); }
+
+    .card-cta {
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .card-flow .card-cta { color: #C8B89A; }
+    .card-lungiman .card-cta { color: #E07040; }
+
+    .card-dots {
+      display: flex;
+      gap: 0.4rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .card-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      animation: pulse 3s infinite;
+    }
+
+    .card-flow .card-dot { background: #C8B89A; }
+    .card-lungiman .card-dot { background: #E07040; opacity: 0.5; }
+
+    .card-lungiman .card-dot:nth-child(2) { animation-delay: 0.5s; }
+    .card-lungiman .card-dot:nth-child(3) { animation-delay: 1s; }
+
+    /* ── ABOUT ── */
+    .about {
+      border-top: 1px solid var(--gold-line);
+      padding: 7rem 2rem;
+      text-align: center;
+    }
+
+    .about-inner {
+      max-width: 580px;
+      margin: 0 auto;
+    }
+
+    .about-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      opacity: 0.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .about h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 300;
+      color: var(--cream);
+      line-height: 1.3;
+      margin-bottom: 1.5rem;
+    }
+
+    .about p {
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.9;
+      margin-bottom: 1rem;
+    }
+
+    .moonga-meaning {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.6rem 1.4rem;
+      border: 1px solid var(--gold-line);
+      border-radius: 30px;
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      color: var(--gold);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--gold-line);
+      padding: 2.5rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      letter-spacing: 0.2em;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .footer-links a {
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--gold); }
+
+    .footer-copy {
+      font-size: 0.72rem;
+      color: rgba(122,110,94,0.5);
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes owlFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 0.3; transform: scale(1); }
+      50% { opacity: 0.9; transform: scale(1.4); }
+    }
+
+    @media (max-width: 640px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { gap: 1.5rem; }
+      .app-cards { grid-template-columns: 1fr; }
+      footer { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-brand">
+      <img src="logo.png" alt="Moonga" class="nav-logo"/>
+      <span class="nav-wordmark">Moonga</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="flow/index.html">Flow</a></li>
+      <li><a href="lungiman/index.html">Lungiman</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="/cdn-cgi/l/email-protection#4a222f2626250a272525242d2b393e3f2e232564292527">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-glow"></div>
+    <img src="logo.png" alt="Moonga Studio" class="studio-owl"/>
+    <p class="hero-eyebrow">An independent studio</p>
+    <h1>Moonga</h1>
+    <p class="hero-sub">
+      We make thoughtful apps and folklore-inspired games.
+      Small team. Big care. Kerala roots, global reach.
+    </p>
+    <div class="hero-divider"></div>
+  </section>
+
+  <!-- APP CARDS -->
+  <section class="apps">
+    <p class="apps-label">Our work</p>
+    <div class="app-cards">
+
+      <!-- Flow -->
+      <a href="flow/index.html" class="app-card card-flow">
+        <div class="card-flow-bg"></div>
+        <div class="card-inner">
+          <div>
+            <span class="card-tag">App · Android</span>
+            <div class="card-title">Flow</div>
+            <p class="card-desc">
+              A calm co-working space for neurodivergent people.
+              Ambient presence, no pressure, no accounts.
+            </p>
+          </div>
+          <div>
+            <div class="card-dots">
+              <div class="card-dot" style="animation-delay:0s"></div>
+              <div class="card-dot" style="animation-delay:0.7s"></div>
+              <div class="card-dot" style="animation-delay:1.4s"></div>
+            </div>
+            <div class="card-cta">Explore Flow <span>→</span></div>
+          </div>
+        </div>
+      </a>
+
+      <!-- Lungiman -->
+      <a href="lungiman/index.html" class="app-card card-lungiman">
+        <div class="card-lungiman-bg"></div>
+        <div class="card-inner">
+          <div>
+            <span class="card-tag">Game · Coming Soon</span>
+            <div class="card-title">Lungiman</div>
+            <p class="card-desc">
+              A Kerala folklore action game. Yakshis, vetaals,
+              theyyam fire — and a hero who fights them all.
+            </p>
+          </div>
+          <div>
+            <div class="card-cta">Learn more <span>→</span></div>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="about-inner">
+      <p class="about-label">The studio</p>
+      <h2>Built with intention,<br>rooted in culture</h2>
+      <p>
+        Moonga is an independent studio publishing under a single vision:
+        make things that matter to real people. Our apps are designed around
+        human needs. Our games are rooted in stories that deserve to be told.
+      </p>
+      <p>
+        We're based in Kerala, India — and proud of it. The folklore, the colour,
+        the texture of this place lives in everything we make.
+      </p>
+      <span class="moonga-meaning">Moonga — the Malayalam word for owl</span>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-brand" style="display:flex;align-items:center;gap:0.6rem;"><img src="logo.png" style="width:24px;height:24px;object-fit:cover;object-position:center 30%;border-radius:4px;opacity:0.7;"/> Moonga</span>
+    <ul class="footer-links">
+      <li><a href="flow/index.html">Flow</a></li>
+      <li><a href="lungiman/index.html">Lungiman</a></li>
+      <li><a href="flow/privacy.html">Privacy</a></li>
+      <li><a href="flow/terms.html">Terms</a></li>
+      <li><a href="/cdn-cgi/l/email-protection#bad2dfd6d6d5fad7d5d5d4dddbc9cecfded3d594d9d5d7">Contact</a></li>
+    </ul
