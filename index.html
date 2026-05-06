@@ -137,16 +137,6 @@
       animation: geoFloat3 28s ease-in-out infinite;
     }
 
-    .hero-eyebrow {
-      font-size: 0.72rem;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 1.2rem;
-      animation: fadeUp 1s 0.1s ease both;
-      position: relative;
-    }
-
     .hero h1 {
       font-family: 'Noto Sans', sans-serif;
       font-size: clamp(4rem, 10vw, 8rem);
@@ -156,17 +146,6 @@
       color: #F0E8D8;
       text-transform: uppercase;
       animation: fadeUp 1s 0.2s ease both;
-      position: relative;
-    }
-
-    .hero-tagline {
-      font-family: 'Noto Sans', sans-serif;
-      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
-      font-weight: 300;
-      font-style: italic;
-      color: rgba(240,232,216,0.6);
-      margin-top: 1rem;
-      animation: fadeUp 1s 0.3s ease both;
       position: relative;
     }
 
@@ -206,7 +185,14 @@
       letter-spacing: 0.25em;
       text-transform: uppercase;
       color: var(--gold);
-      margin-bottom: 3.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-sub {
+      text-align: center;
+      font-size: 1rem;
+      color: var(--muted);
+      margin-bottom: 3rem;
     }
 
     .product-grid {
@@ -457,9 +443,7 @@
     <div class="hero-geo hero-geo-1"></div>
     <div class="hero-geo hero-geo-2"></div>
     <div class="hero-geo hero-geo-3"></div>
-    <p class="hero-eyebrow">A calm operating system for modern life</p>
     <h1>Moonga</h1>
-    <p class="hero-tagline">Building products that matters.</p>
     <div class="hero-divider"></div>
     <div class="hero-values">
       <span>Calm by design</span>
@@ -472,16 +456,16 @@
   <!-- PRODUCTS -->
   <section class="products" id="products">
     <p class="section-label">Products</p>
+    <p class="section-sub">A calm operating system for modern life.</p>
     <div class="product-grid">
 
       <!-- minnal -->
-      <div class="product-card static card-minnal">
+      <a href="https://minnal.io" target="_blank" rel="noopener" class="product-card card-minnal">
         <div class="product-icon">⚡</div>
         <div class="product-name">minnal</div>
         <div class="product-cat">AI Marketing</div>
         <p class="product-desc">AI social-media marketing platform for growth, automation and insights.</p>
-        <span class="product-badge">Coming soon</span>
-      </div>
+      </a>
 
       <!-- flow -->
       <a href="flow/index.html" class="product-card card-flow">
@@ -492,22 +476,20 @@
       </a>
 
       <!-- bysloth.co -->
-      <div class="product-card static card-bysloth">
+      <a href="https://srohan8.github.io/slw-travel/" target="_blank" rel="noopener" class="product-card card-bysloth">
         <div class="product-icon">🦥</div>
         <div class="product-name">bysloth.co</div>
         <div class="product-cat">Travel Planner</div>
         <p class="product-desc">Overland trip planner with route guides, maps and curated travel content.</p>
-        <span class="product-badge">Coming soon</span>
-      </div>
+      </a>
 
       <!-- bodha -->
-      <div class="product-card static card-bodha">
+      <a href="https://bodhaapp.com" target="_blank" rel="noopener" class="product-card card-bodha">
         <div class="product-icon">✧</div>
         <div class="product-name">bodha</div>
         <div class="product-cat">Career Pivot</div>
         <p class="product-desc">Plan your career pivot with frameworks, templates and smart guidance.</p>
-        <span class="product-badge">Coming soon</span>
-      </div>
+      </a>
 
       <!-- lungiman -->
       <a href="lungiman/index.html" class="product-card card-lungiman">
@@ -548,8 +530,6 @@
   <footer>
     <img src="logo-light.svg" alt="Moonga" class="footer-logo"/>
     <ul class="footer-links">
-      <li><a href="flow/index.html">Flow</a></li>
-      <li><a href="lungiman/index.html">Lungiman</a></li>
       <li><a href="flow/privacy.html">Privacy</a></li>
       <li><a href="flow/terms.html">Terms</a></li>
       <li><a href="mailto:hi@moonga.in">Contact</a></li>
