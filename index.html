@@ -6,7 +6,7 @@
   <title>Moonga — Building products that matters</title>
   <meta name="description" content="Moonga builds thoughtful products for modern life. Seven products. One direction."/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Noto+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -81,21 +81,59 @@
       text-align: center;
       padding: 8rem 2rem 5rem;
       position: relative;
-      background: linear-gradient(-45deg, #0D0D0D, #1A1610, #0E1018, #131008);
-      background-size: 400% 400%;
-      animation: gradientShift 14s ease infinite;
+      background: #111520;
       overflow: hidden;
     }
 
+    /* dot grid */
     .hero::before {
       content: '';
       position: absolute;
       inset: 0;
-      background:
-        radial-gradient(ellipse 55% 45% at 25% 65%, rgba(200,169,110,0.08) 0%, transparent 65%),
-        radial-gradient(ellipse 45% 40% at 75% 30%, rgba(200,169,110,0.05) 0%, transparent 65%);
+      background-image: radial-gradient(rgba(255,255,255,0.07) 1px, transparent 1px);
+      background-size: 36px 36px;
       pointer-events: none;
-      animation: glowShift 10s ease-in-out infinite alternate;
+    }
+
+    /* subtle radial vignette over the grid */
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 50% 50%, transparent 40%, #111520 100%);
+      pointer-events: none;
+    }
+
+    /* geometric shapes */
+    .hero-geo {
+      position: absolute;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .hero-geo-1 {
+      width: 480px; height: 480px;
+      top: -160px; right: -160px;
+      border: 1px solid rgba(200,169,110,0.14);
+      background: rgba(200,169,110,0.03);
+      transform: rotate(45deg);
+      animation: geoFloat1 22s ease-in-out infinite;
+    }
+
+    .hero-geo-2 {
+      width: 360px; height: 360px;
+      bottom: -120px; left: -80px;
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 50%;
+      animation: geoFloat2 17s ease-in-out infinite;
+    }
+
+    .hero-geo-3 {
+      width: 200px; height: 200px;
+      top: 20%; left: 8%;
+      border: 1px solid rgba(200,169,110,0.08);
+      transform: rotate(20deg);
+      animation: geoFloat3 28s ease-in-out infinite;
     }
 
     .hero-eyebrow {
@@ -109,7 +147,7 @@
     }
 
     .hero h1 {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Noto Sans', sans-serif;
       font-size: clamp(4rem, 10vw, 8rem);
       font-weight: 300;
       letter-spacing: 0.12em;
@@ -121,7 +159,7 @@
     }
 
     .hero-tagline {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Noto Sans', sans-serif;
       font-size: clamp(1.1rem, 2.5vw, 1.5rem);
       font-weight: 300;
       font-style: italic;
@@ -217,7 +255,7 @@
     }
 
     .product-name {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Noto Sans', sans-serif;
       font-size: 1.5rem;
       font-weight: 400;
       color: var(--text);
@@ -311,7 +349,7 @@
     }
 
     .about h2 {
-      font-family: 'Cormorant Garamond', serif;
+      font-family: 'Noto Sans', sans-serif;
       font-size: clamp(1.8rem, 4vw, 2.8rem);
       font-weight: 300;
       color: var(--text);
@@ -372,15 +410,19 @@
       to   { opacity: 1; transform: translateY(0); }
     }
 
-    @keyframes gradientShift {
-      0%   { background-position: 0% 50%; }
-      50%  { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+    @keyframes geoFloat1 {
+      0%, 100% { transform: rotate(45deg) translate(0, 0); }
+      50%       { transform: rotate(49deg) translate(-18px, 22px); }
     }
 
-    @keyframes glowShift {
-      0%   { opacity: 0.7; }
-      100% { opacity: 1; }
+    @keyframes geoFloat2 {
+      0%, 100% { transform: translate(0, 0); }
+      50%       { transform: translate(16px, -18px); }
+    }
+
+    @keyframes geoFloat3 {
+      0%, 100% { transform: rotate(20deg) translate(0, 0); }
+      50%       { transform: rotate(25deg) translate(12px, 18px); }
     }
 
     @media (max-width: 860px) {
@@ -411,6 +453,9 @@
 
   <!-- HERO -->
   <section class="hero">
+    <div class="hero-geo hero-geo-1"></div>
+    <div class="hero-geo hero-geo-2"></div>
+    <div class="hero-geo hero-geo-3"></div>
     <p class="hero-eyebrow">A calm operating system for modern life</p>
     <h1>Moonga</h1>
     <p class="hero-tagline">Building products that matters.</p>
