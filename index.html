@@ -6,16 +6,16 @@
   <title>Moonga — Building products that matters</title>
   <meta name="description" content="Moonga builds thoughtful products for modern life. Seven products. One direction."/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Noto+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
       --bg: #FDFAF3;
       --surface: #FFFFFF;
-      --text: #1A1610;
-      --text-mid: #3A3020;
-      --muted: #7A6E5E;
+      --text: #111111;
+      --text-mid: #111111;
+      --muted: #444444;
       --gold: #C8A96E;
       --gold-dim: rgba(200,169,110,0.12);
       --gold-line: rgba(200,169,110,0.22);
@@ -25,10 +25,10 @@
     html { scroll-behavior: smooth; }
 
     body {
-      font-family: 'Lato', sans-serif;
-      font-weight: 300;
+      font-family: 'Noto Sans', sans-serif;
+      font-weight: 400;
       background: var(--bg);
-      color: var(--text-mid);
+      color: var(--text);
       line-height: 1.7;
       overflow-x: hidden;
     }
@@ -81,6 +81,10 @@
       text-align: center;
       padding: 8rem 2rem 5rem;
       position: relative;
+      background: linear-gradient(-45deg, #0D0D0D, #1A1610, #0E1018, #131008);
+      background-size: 400% 400%;
+      animation: gradientShift 14s ease infinite;
+      overflow: hidden;
     }
 
     .hero::before {
@@ -88,19 +92,10 @@
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(ellipse 60% 50% at 30% 70%, rgba(200,169,110,0.09) 0%, transparent 70%),
-        radial-gradient(ellipse 50% 40% at 70% 25%, rgba(200,169,110,0.06) 0%, transparent 70%);
+        radial-gradient(ellipse 55% 45% at 25% 65%, rgba(200,169,110,0.08) 0%, transparent 65%),
+        radial-gradient(ellipse 45% 40% at 75% 30%, rgba(200,169,110,0.05) 0%, transparent 65%);
       pointer-events: none;
-    }
-
-    .hero-owl {
-      width: 90px;
-      height: auto;
-      object-fit: contain;
-      object-position: center 30%;
-      margin-bottom: 2rem;
-      animation: owlFloat 6s ease-in-out infinite;
-      filter: drop-shadow(0 6px 20px rgba(200,169,110,0.2));
+      animation: glowShift 10s ease-in-out infinite alternate;
     }
 
     .hero-eyebrow {
@@ -110,6 +105,7 @@
       color: var(--gold);
       margin-bottom: 1.2rem;
       animation: fadeUp 1s 0.1s ease both;
+      position: relative;
     }
 
     .hero h1 {
@@ -118,9 +114,10 @@
       font-weight: 300;
       letter-spacing: 0.12em;
       line-height: 1;
-      color: var(--text);
+      color: #F0E8D8;
       text-transform: uppercase;
       animation: fadeUp 1s 0.2s ease both;
+      position: relative;
     }
 
     .hero-tagline {
@@ -128,17 +125,19 @@
       font-size: clamp(1.1rem, 2.5vw, 1.5rem);
       font-weight: 300;
       font-style: italic;
-      color: var(--muted);
+      color: rgba(240,232,216,0.6);
       margin-top: 1rem;
       animation: fadeUp 1s 0.3s ease both;
+      position: relative;
     }
 
     .hero-divider {
       width: 40px;
       height: 1px;
-      background: var(--gold-line);
+      background: rgba(200,169,110,0.35);
       margin: 2.5rem auto 2rem;
       animation: fadeUp 1s 0.4s ease both;
+      position: relative;
     }
 
     .hero-values {
@@ -147,14 +146,14 @@
       flex-wrap: wrap;
       justify-content: center;
       animation: fadeUp 1s 0.5s ease both;
+      position: relative;
     }
 
     .hero-values span {
       font-size: 0.72rem;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: var(--muted);
-      opacity: 0.75;
+      color: rgba(240,232,216,0.45);
     }
 
     /* ── PRODUCTS ── */
@@ -373,9 +372,15 @@
       to   { opacity: 1; transform: translateY(0); }
     }
 
-    @keyframes owlFloat {
-      0%, 100% { transform: translateY(0); }
-      50%       { transform: translateY(-10px); }
+    @keyframes gradientShift {
+      0%   { background-position: 0% 50%; }
+      50%  { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    @keyframes glowShift {
+      0%   { opacity: 0.7; }
+      100% { opacity: 1; }
     }
 
     @media (max-width: 860px) {
@@ -406,7 +411,6 @@
 
   <!-- HERO -->
   <section class="hero">
-    <img src="logo.png" alt="" class="hero-owl" aria-hidden="true"/>
     <p class="hero-eyebrow">A calm operating system for modern life</p>
     <h1>Moonga</h1>
     <p class="hero-tagline">Building products that matters.</p>
