@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tools & Resources — Moonga</title>
+  <meta name="description" content="Free tools built by Moonga. No account needed."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #FDFAF3;
+      --surface: #FFFFFF;
+      --text: #111111;
+      --muted: #444444;
+      --gold: #C8A96E;
+      --gold-dim: rgba(200,169,110,0.12);
+      --gold-line: rgba(200,169,110,0.22);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Noto Sans', sans-serif;
+      font-weight: 400;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.1rem 3rem;
+      background: rgba(253,250,243,0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--gold-line);
+    }
+
+    .nav-brand { text-decoration: none; display: flex; align-items: center; }
+    .nav-logo-full { height: 38px; width: auto; }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.75rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    /* ── PAGE HEADER ── */
+    .page-header {
+      padding: 9rem 2rem 4rem;
+      text-align: center;
+      border-bottom: 1px solid var(--gold-line);
+    }
+
+    .page-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    .page-header h1 {
+      font-family: 'Noto Sans', sans-serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 300;
+      color: var(--text);
+      letter-spacing: 0.04em;
+      margin-bottom: 0.75rem;
+    }
+
+    .page-header p {
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    /* ── TOOLS GRID ── */
+    .tools {
+      padding: 5rem 2rem 8rem;
+    }
+
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .tool-card {
+      background: var(--surface);
+      border-radius: 16px;
+      border: 1px solid var(--gold-line);
+      padding: 1.8rem;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .tool-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(42,36,24,0.07);
+    }
+
+    .tool-cat {
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .tool-cat::before {
+      content: '';
+      display: block;
+      width: 18px;
+      height: 2px;
+      border-radius: 1px;
+      flex-shrink: 0;
+    }
+
+    .tool-name {
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: var(--text);
+      letter-spacing: 0.02em;
+      line-height: 1.2;
+    }
+
+    .tool-desc {
+      font-size: 0.84rem;
+      color: var(--muted);
+      line-height: 1.7;
+      flex: 1;
+    }
+
+    .tool-link {
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-top: 0.25rem;
+    }
+
+    /* Category accent colors */
+    .cat-opensource .tool-cat       { color: #C8A96E; }
+    .cat-opensource .tool-cat::before { background: #C8A96E; }
+
+    .cat-marketing .tool-cat        { color: #E8640A; }
+    .cat-marketing .tool-cat::before { background: #E8640A; }
+
+    .cat-travel .tool-cat           { color: #3D6B47; }
+    .cat-travel .tool-cat::before   { background: #3D6B47; }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--gold-line);
+      padding: 2.5rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-logo { height: 28px; width: auto; opacity: 0.65; }
+
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--text); }
+
+    .footer-copy {
+      font-size: 0.72rem;
+      color: rgba(122,110,94,0.5);
+    }
+
+    @media (max-width: 620px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { gap: 1.5rem; }
+      .tools-grid { grid-template-columns: 1fr; }
+      footer { flex-direction: column; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="nav-brand">
+      <img src="logo-light.svg" alt="Moonga" class="nav-logo-full"/>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/#products">Products</a></li>
+      <li><a href="/#about">About</a></li>
+      <li><a href="mailto:hi@moonga.in">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <p class="page-label">Moonga</p>
+    <h1>Tools & Resources</h1>
+    <p>Free tools built by Moonga. No account needed.</p>
+  </div>
+
+  <!-- TOOLS -->
+  <section class="tools">
+    <div class="tools-grid">
+
+      <!-- forhumans -->
+      <a href="https://github.com/srohan8/forhumans" target="_blank" rel="noopener" class="tool-card cat-opensource">
+        <div class="tool-cat">Open Source</div>
+        <div class="tool-name">forhumans</div>
+        <p class="tool-desc">Claude AI skills for human-first UX — messaging, flows, and accessibility. Drop into any Claude Code, Cursor, or Copilot project. No more repeating your context.</p>
+        <span class="tool-link">View on GitHub ↗</span>
+      </a>
+
+      <!-- GEO Readiness Grader -->
+      <a href="https://grader.minnal.io/" target="_blank" rel="noopener" class="tool-card cat-marketing">
+        <div class="tool-cat">AI Marketing</div>
+        <div class="tool-name">GEO Readiness Grader</div>
+        <p class="tool-desc">Score how visible your brand is to AI like ChatGPT. Free audit in under a minute — checks crawler access, page structure, and brand presence on sources AI cites.</p>
+        <span class="tool-link">Open tool ↗</span>
+      </a>
+
+      <!-- How Long? -->
+      <a href="https://bysloth.com/how-long/" target="_blank" rel="noopener" class="tool-card cat-travel">
+        <div class="tool-cat">Travel</div>
+        <div class="tool-name">How Long?</div>
+        <p class="tool-desc">Estimate realistic overland journey time, cost range, and a sample route. For travelers who'd rather not fly — surface travel made legible.</p>
+        <span class="tool-link">Open tool ↗</span>
+      </a>
+
+      <!-- Bike on Train -->
+      <a href="https://bysloth.com/bike-on-train/" target="_blank" rel="noopener" class="tool-card cat-travel">
+        <div class="tool-cat">Travel</div>
+        <div class="tool-name">Bike on Train</div>
+        <p class="tool-desc">Check bike policies for 30+ trains, buses, and ferries worldwide. Plan cycling and transit legs together without the guesswork.</p>
+        <span class="tool-link">Open tool ↗</span>
+      </a>
+
+      <!-- CO₂ Calculator -->
+      <a href="https://bysloth.com/carbon/" target="_blank" rel="noopener" class="tool-card cat-travel">
+        <div class="tool-cat">Travel</div>
+        <div class="tool-name">CO₂ Calculator</div>
+        <p class="tool-desc">Compare flight emissions against overland alternatives. See exactly what surface travel costs the atmosphere — route by route.</p>
+        <span class="tool-link">Open tool ↗</span>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <img src="logo-light.svg" alt="Moonga" class="footer-logo"/>
+    <ul class="footer-links">
+      <li><a href="flow/privacy.html">Privacy</a></li>
+      <li><a href="flow/terms.html">Terms</a></li>
+      <li><a href="tools.html">Tools</a></li>
+      <li><a href="mailto:hi@moonga.in">Contact</a></li>
+    </ul>
+    <span class="footer-copy">© 2026 Moonga</span>
+  </footer>
+
+</body>
+</html>
