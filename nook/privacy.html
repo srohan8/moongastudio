@@ -19,7 +19,7 @@
 </head>
 <body>
   <h1>Privacy Policy</h1>
-  <p class="updated">Last updated: May 2026 · Applies to: Nook web app &amp; Android app</p>
+  <p class="updated">Last updated: June 2026 · Applies to: Nook web app &amp; Android app</p>
 
   <p>Nook ("we", "our", or "the app") is a virtual co-working space made by Moonga Studio. This policy explains what personal data we collect, why, how long we keep it, and your rights under the <strong>EU General Data Protection Regulation (GDPR)</strong> and India's <strong>Digital Personal Data Protection Act 2023 (DPDPA)</strong>.</p>
 
@@ -58,10 +58,22 @@
   <h3>2e. Anonymous analytics</h3>
   <p>We use PostHog to collect anonymous usage events (e.g. "entered a room") linked only to your device ID. No personal profile data is sent. No screen recordings are made. You can opt out any time in <strong>You → Privacy &amp; data → Anonymous analytics</strong>.</p>
 
+  <h3>2f. Friends and direct messages</h3>
+  <p>Nook lets you connect with specific people as friends and send them private one-to-one messages and room invites.</p>
+  <ul>
+    <li><strong>Friend connections</strong> — when you send, accept, decline, or block a friend request, we store the account IDs of both people involved and the request status. This lets us show your friends list and route messages and invites.</li>
+    <li><strong>Direct messages</strong> — private one-to-one messages (and room invites) between you and a friend, stored with the sender and recipient account IDs and a timestamp. Unlike room chat, direct messages are <strong>not</strong> automatically deleted after 24 hours — they remain until you or the sender delete them, or you delete your account.</li>
+  </ul>
+  <p>Direct messages and friend connections are visible only to the two people involved. Access is enforced at the database level using row-level security: every request carries your signed-in account's credentials, so no other user — and no holder of the app's public key — can read your messages or your friends list.</p>
+
+  <h3>2g. Keeping the screen on (battery status)</h3>
+  <p>The optional "Keep the room glowing" setting holds your screen awake while you are in a room, so the space stays visible beside you. To avoid draining your battery, the app reads your device's battery level and charging status. This information is used <strong>only on your device</strong> to decide when to dim the screen — it is never collected, stored, or sent to our servers or any third party. You can turn the setting off any time from the sound controls inside a room.</p>
+
   <h2>3. Lawful basis for processing (GDPR Art. 6)</h2>
   <table>
     <tr><th>Processing activity</th><th>Lawful basis</th></tr>
     <tr><td>Room presence, chat, session data</td><td>Legitimate interests (Art. 6(1)(f)) — necessary to deliver co-working functionality. Your interest in privacy does not override this for minimal functional data.</td></tr>
+    <tr><td>Friends &amp; direct messages</td><td>Legitimate interests (Art. 6(1)(f)) — necessary to deliver the friends and private-messaging features you choose to use.</td></tr>
     <tr><td>Account authentication (email)</td><td>Performance of contract (Art. 6(1)(b)) — signing in requires your email.</td></tr>
     <tr><td>Anonymous analytics</td><td>Legitimate interests (Art. 6(1)(f)) — anonymous product improvement. Opt-out available at any time.</td></tr>
   </table>
@@ -70,6 +82,8 @@
   <table>
     <tr><th>Data</th><th>Retention period</th></tr>
     <tr><td>Chat messages</td><td>24 hours, then automatically deleted</td></tr>
+    <tr><td>Direct messages</td><td>Until you or the sender delete the message, or you delete your account</td></tr>
+    <tr><td>Friend connections</td><td>Until either person removes the connection, or you delete your account</td></tr>
     <tr><td>Session presence</td><td>Deleted on room exit or after 2 minutes of inactivity</td></tr>
     <tr><td>Profile (nickname, bio, city, avatar)</td><td>Until you delete your account, or after 12 months of inactivity</td></tr>
     <tr><td>Private rooms</td><td>Until the creator deletes the room</td></tr>
