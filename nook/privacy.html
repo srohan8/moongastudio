@@ -52,7 +52,7 @@
   <ul>
     <li><strong>Chat messages</strong> — stored with your device ID, nickname, and timestamp. Automatically deleted after 24 hours.</li>
     <li><strong>Session presence</strong> — device ID, nickname, bio, avatar, city, intention, and timestamps stored while you are in a room. Deleted when you leave (or after 2 minutes of inactivity).</li>
-    <li><strong>Private rooms</strong> — room name, code, settings, and creator's device ID. Persists until the creator deletes the room.</li>
+    <li><strong>Private rooms</strong> — creating or joining a private room requires a free account. We store the room name, code, settings, and the account ID of the creator, plus a membership record (which accounts have joined which room) so we can show each member their rooms. Access is enforced at the database level: only the owner and people who have joined with the room code can see a room. Persists until the creator deletes the room.</li>
   </ul>
 
   <h3>2e. Anonymous analytics</h3>
@@ -86,7 +86,7 @@
     <tr><td>Friend connections</td><td>Until either person removes the connection, or you delete your account</td></tr>
     <tr><td>Session presence</td><td>Deleted on room exit or after 2 minutes of inactivity</td></tr>
     <tr><td>Profile (nickname, bio, city, avatar)</td><td>Until you delete your account, or after 12 months of inactivity</td></tr>
-    <tr><td>Private rooms</td><td>Until the creator deletes the room</td></tr>
+    <tr><td>Private rooms &amp; membership</td><td>Until the creator deletes the room; your membership record until you leave the room or delete your account</td></tr>
     <tr><td>Email (if account created)</td><td>Until you delete your account</td></tr>
     <tr><td>Analytics events</td><td>2 years (PostHog default)</td></tr>
     <tr><td>On-device data (tasks, preferences)</td><td>Until you clear it in settings or uninstall</td></tr>
