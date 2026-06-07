@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nook vs Rize.io: Two different tools for ADHD focus (2026)</title>
+  <meta name="description" content="Nook and Rize.io both help people with ADHD focus better — but in completely different ways. Rize tracks where your time goes. Nook gives you co-presence to actually start. Here's when to use each." />
+  <link rel="canonical" href="https://www.moonga.studio/nook/blog/nook-vs-rize.html" />
+  <link rel="icon" type="image/png" href="../favicon.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Nook vs Rize.io: Two different tools for ADHD focus (2026)",
+    "description": "Nook and Rize.io both help people with ADHD — but solve different problems. Rize tracks where your time goes. Nook gives you body doubling co-presence so you can actually start.",
+    "datePublished": "2026-06-07",
+    "dateModified": "2026-06-07",
+    "author": { "@type": "Organization", "name": "Moonga Studio", "url": "https://www.moonga.studio" },
+    "publisher": { "@type": "Organization", "name": "Moonga Studio" },
+    "url": "https://www.moonga.studio/nook/blog/nook-vs-rize.html",
+    "about": [
+      { "@type": "Thing", "name": "Body doubling" },
+      { "@type": "Thing", "name": "ADHD productivity" },
+      { "@type": "Thing", "name": "Time tracking" },
+      { "@type": "Thing", "name": "Focus tools" }
+    ],
+    "mentions": [
+      { "@type": "SoftwareApplication", "name": "Nook", "url": "https://nook.moonga.studio", "applicationCategory": "ProductivityApplication", "offers": { "@type": "Offer", "price": "0" } },
+      { "@type": "SoftwareApplication", "name": "Rize", "url": "https://rize.io", "applicationCategory": "ProductivityApplication" }
+    ]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #F0EBE0; --ink: #3A3228; --ink-soft: #66594B;
+      --rule: rgba(58,50,40,.12); --terra: #C65A3A;
+      --rize: #5B6AF0;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'Lato', system-ui, sans-serif;
+    }
+    body { background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 17px; line-height: 1.75; -webkit-font-smoothing: antialiased; }
+
+    nav { position: sticky; top: 0; z-index: 100; backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); background: rgba(240,235,224,.88); border-bottom: 1px solid var(--rule); }
+    .nav-inner { max-width: 720px; margin: 0 auto; padding: 0 24px; height: 52px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-left { display: flex; align-items: center; gap: 8px; font-size: .8rem; color: var(--ink-soft); flex-wrap: wrap; }
+    .nav-left a { color: var(--ink-soft); text-decoration: none; transition: color .15s; }
+    .nav-left a:hover { color: var(--ink); }
+    .nav-cta { font-size: .8rem; letter-spacing: .06em; text-transform: uppercase; color: var(--ink); text-decoration: none; border: 1px solid rgba(58,50,40,.35); border-radius: 40px; padding: 6px 18px; transition: background .18s, color .18s; flex-shrink: 0; }
+    .nav-cta:hover { background: var(--ink); color: var(--bg); }
+
+    .container { max-width: 680px; margin: 0 auto; padding: 0 24px; }
+
+    .post-header { padding: 56px 0 40px; border-bottom: 1px solid var(--rule); margin-bottom: 48px; }
+    .post-meta { font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-soft); display: flex; align-items: center; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
+    .post-tag { background: rgba(198,90,58,.1); color: var(--terra); border-radius: 100px; padding: 2px 10px; }
+    .post-title { font-family: var(--serif); font-size: clamp(1.9rem, 5vw, 2.8rem); font-weight: 300; line-height: 1.1; margin-bottom: 16px; }
+    .post-lede { font-size: 1.05rem; color: var(--ink-soft); font-weight: 300; line-height: 1.65; }
+
+    .post-body { padding-bottom: 72px; }
+    .post-body p { margin-bottom: 1.4rem; }
+    .post-body h2 { font-family: var(--serif); font-size: 1.65rem; font-weight: 300; margin: 2.75rem 0 .9rem; }
+    .post-body h3 { font-family: var(--serif); font-size: 1.2rem; font-weight: 400; margin: 1.75rem 0 .65rem; }
+    .post-body ul, .post-body ol { padding-left: 1.4rem; margin-bottom: 1.4rem; }
+    .post-body li { margin-bottom: .5rem; }
+    .post-body blockquote { border-left: 3px solid var(--terra); padding: .2rem 0 .2rem 1.25rem; margin: 1.75rem 0; font-family: var(--serif); font-size: 1.15rem; font-style: italic; font-weight: 300; color: var(--ink-soft); }
+    .post-body a { color: var(--terra); text-underline-offset: 3px; }
+    .post-body strong { font-weight: 600; }
+    .post-body hr { border: none; border-top: 1px solid var(--rule); margin: 2.5rem 0; }
+
+    /* Comparison table */
+    .compare-table { width: 100%; border-collapse: collapse; margin: 1.75rem 0 2rem; font-size: .9rem; }
+    .compare-table th { text-align: left; padding: .65rem .85rem; font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-soft); border-bottom: 2px solid var(--rule); }
+    .compare-table td { padding: .7rem .85rem; border-bottom: 1px solid var(--rule); vertical-align: top; color: var(--ink-soft); }
+    .compare-table td:first-child { color: var(--ink); font-weight: 400; }
+    .compare-table td.nook { color: var(--terra); font-weight: 400; }
+    .compare-table td.rize { color: var(--rize); font-weight: 400; }
+    .compare-table th.nook { color: var(--terra); }
+    .compare-table th.rize { color: var(--rize); }
+    .compare-table tr:last-child td { border-bottom: none; }
+
+    /* Core difference callout */
+    .core-diff { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 1.75rem 0; }
+    .core-diff-card { border-radius: 14px; padding: 24px 22px; }
+    .core-diff-card--nook { background: rgba(198,90,58,.07); border: 1.5px solid rgba(198,90,58,.3); }
+    .core-diff-card--rize { background: rgba(91,106,240,.06); border: 1.5px solid rgba(91,106,240,.25); }
+    .core-diff-card .label { font-size: .68rem; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 8px; }
+    .core-diff-card--nook .label { color: var(--terra); }
+    .core-diff-card--rize .label { color: var(--rize); }
+    .core-diff-card .headline { font-family: var(--serif); font-size: 1.2rem; font-weight: 400; margin-bottom: 8px; }
+    .core-diff-card .desc { font-size: .85rem; color: var(--ink-soft); line-height: 1.6; }
+
+    /* Summary cards */
+    .summary-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 1.75rem 0; }
+    .summary-card { border: 1.5px solid var(--rule); border-radius: 14px; padding: 22px 20px; }
+    .summary-card h3 { font-family: var(--serif); font-size: 1.15rem; font-weight: 400; margin-bottom: .65rem; }
+    .summary-card ul { padding-left: 1.1rem; font-size: .88rem; color: var(--ink-soft); }
+    .summary-card li { margin-bottom: .35rem; }
+    .summary-card--nook { border-color: rgba(198,90,58,.35); background: rgba(198,90,58,.03); }
+    .summary-card--rize { border-color: rgba(91,106,240,.25); background: rgba(91,106,240,.03); }
+
+    /* Verdict */
+    .verdict { background: rgba(198,90,58,.06); border: 1px solid rgba(198,90,58,.2); border-radius: 16px; padding: 28px 32px; margin: 2.5rem 0; }
+    .verdict h2 { font-family: var(--serif); font-size: 1.5rem; font-weight: 300; margin-bottom: 1rem; }
+    .verdict p { font-size: .95rem; color: var(--ink-soft); margin-bottom: .85rem; }
+    .verdict p:last-child { margin-bottom: 0; }
+    .verdict strong { color: var(--ink); }
+
+    /* CTA */
+    .post-cta { text-align: center; margin: 2.5rem 0; padding: 32px; background: rgba(58,50,40,.04); border-radius: 16px; border: 1px solid var(--rule); }
+    .post-cta p { margin-bottom: 16px; font-size: .95rem; color: var(--ink-soft); }
+    .post-cta a { display: inline-block; background: var(--ink); color: var(--bg); font-size: .8rem; letter-spacing: .06em; text-transform: uppercase; text-decoration: none; padding: 12px 28px; border-radius: 40px; transition: opacity .18s; }
+    .post-cta a:hover { opacity: .8; }
+
+    footer { padding: 32px 24px; border-top: 1px solid var(--rule); margin-top: 48px; }
+    .footer-inner { max-width: 720px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a { font-size: .8rem; color: var(--ink-soft); text-decoration: none; transition: color .15s; }
+    .footer-links a:hover { color: var(--ink); }
+    .footer-copy { font-size: .75rem; color: var(--ink-soft); opacity: .6; }
+
+    @media (max-width: 560px) {
+      .core-diff, .summary-grid { grid-template-columns: 1fr; }
+      .post-header { padding: 36px 0 28px; margin-bottom: 32px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <div class="nav-left">
+        <a href="../index.html">Nook</a>
+        <span>›</span>
+        <a href="index.html">Blog</a>
+        <span>›</span>
+        <span>Nook vs Rize</span>
+      </div>
+      <a class="nav-cta" href="https://nook.moonga.studio" target="_blank" rel="noopener">Try Nook free</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <header class="post-header">
+      <div class="post-meta">
+        <span>2026-06-07</span>
+        <span class="post-tag">Comparison</span>
+        <span>5 min read</span>
+      </div>
+      <h1 class="post-title">Nook vs Rize.io: two different tools for ADHD focus</h1>
+      <p class="post-lede">Nook and Rize.io are both recommended for people with ADHD who struggle to focus — but they solve fundamentally different problems. Rize tracks where your time actually goes. Nook gives you the ambient co-presence of body doubling so you can start in the first place. Understanding the difference is the key to using both effectively.</p>
+    </header>
+
+    <article class="post-body">
+
+      <p>When people search for ADHD focus tools, Nook and Rize often appear in the same lists. That makes sense — both are calm, low-distraction apps designed to help you do better work. But they target completely different parts of the ADHD focus problem.</p>
+
+      <div class="core-diff">
+        <div class="core-diff-card core-diff-card--nook">
+          <p class="label">Nook</p>
+          <p class="headline">Helps you start and sustain focus</p>
+          <p class="desc">Uses ambient co-presence (body doubling) and Pomodoro rhythms so you can activate focus and stay in it — especially when working alone feels impossible.</p>
+        </div>
+        <div class="core-diff-card core-diff-card--rize">
+          <p class="label">Rize</p>
+          <p class="headline">Helps you understand your time</p>
+          <p class="desc">Automatically tracks how you spend time on your computer — what apps, what tasks, what categories — and surfaces patterns so you can improve your habits over time.</p>
+        </div>
+      </div>
+
+      <p>Put simply: <strong>Rize tells you where your time went. Nook helps you protect time in the moment.</strong> For many people with ADHD, both are useful — at different points in the day.</p>
+
+      <h2>What is Rize.io?</h2>
+
+      <p>Rize is an AI-powered time tracker for Mac and Windows. It runs in the background and automatically categorises how you spend time across apps and tasks — coding, writing, meetings, social media — without requiring you to manually start and stop timers. At the end of the day or week, it shows you a detailed breakdown of where your time actually went versus where you intended it to go.</p>
+
+      <p>Rize also includes focus sessions with a built-in timer, focus music integration, and break reminders. For ADHD users, the most valuable feature is often the honest data: many people are surprised to discover how much time disappears into unfocused switching between apps, and seeing that clearly can motivate change.</p>
+
+      <h2>What is Nook?</h2>
+
+      <p>Nook is a virtual co-working app. You join a named room — Beach Café, The Cascade, The Meadow, or After Hours — set a brief intention, and work alongside whoever else is there. No camera. No scheduling. No sign-up required. The room runs a shared Pomodoro timer, ambient sound plays quietly in the background, and you can see other people working beside you.</p>
+
+      <p>Nook works through <strong>body doubling</strong> — the well-documented ADHD strategy where the presence of another person (even a stranger, even online) activates focus that working alone can't produce. For many people with ADHD, the single most effective thing they can do is stop working alone.</p>
+
+      <h2>Feature comparison</h2>
+
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th class="nook">Nook</th>
+            <th class="rize">Rize</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Core mechanism</td>
+            <td class="nook">Body doubling — co-presence with others</td>
+            <td class="rize">Automatic time tracking + analytics</td>
+          </tr>
+          <tr>
+            <td>Helps you with</td>
+            <td class="nook">Starting and staying in focus</td>
+            <td class="rize">Understanding where your time goes</td>
+          </tr>
+          <tr>
+            <td>Social element</td>
+            <td class="nook">Yes — rooms with real people</td>
+            <td class="rize">No — solo tool</td>
+          </tr>
+          <tr>
+            <td>Camera required</td>
+            <td class="nook">No</td>
+            <td class="rize">No</td>
+          </tr>
+          <tr>
+            <td>Works in background</td>
+            <td class="nook">Yes — ambient, beside your work</td>
+            <td class="rize">Yes — passive tracking</td>
+          </tr>
+          <tr>
+            <td>Timer / Pomodoro</td>
+            <td class="nook">Yes — per-room shared rhythm</td>
+            <td class="rize">Yes — focus sessions with timer</td>
+          </tr>
+          <tr>
+            <td>Ambient sound</td>
+            <td class="nook">Yes — café, rain, fireplace, waterfall</td>
+            <td class="rize">Focus music integration</td>
+          </tr>
+          <tr>
+            <td>Insights / reporting</td>
+            <td class="nook">No</td>
+            <td class="rize">Yes — detailed time breakdowns</td>
+          </tr>
+          <tr>
+            <td>Platform</td>
+            <td class="nook">Web + Android</td>
+            <td class="rize">Mac + Windows (desktop)</td>
+          </tr>
+          <tr>
+            <td>Account required</td>
+            <td class="nook">No — join public rooms anonymously</td>
+            <td class="rize">Yes</td>
+          </tr>
+          <tr>
+            <td>Price</td>
+            <td class="nook">Free</td>
+            <td class="rize">Paid subscription</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <hr />
+
+      <h2>Which solves the ADHD focus problem better?</h2>
+
+      <p>The honest answer is that they solve <em>different</em> ADHD focus problems — and which one matters more depends on where you're stuck.</p>
+
+      <h3>If your problem is activation — you can't start</h3>
+
+      <p>This is the classic ADHD executive dysfunction challenge. You know exactly what you need to do. You just cannot make yourself begin. Time tracking won't help here — knowing where your time went yesterday doesn't help you open the document right now.</p>
+
+      <p>This is where Nook's body doubling works directly. The presence of other people in a room creates the external structure that compensates for reduced internal regulation. Drop into a room, set your intention ("writing the report"), and the social context makes starting easier. Many users describe this as the only thing that reliably works when nothing else does.</p>
+
+      <h3>If your problem is awareness — time disappears without you noticing</h3>
+
+      <p>ADHD time blindness is real: hours pass without a sense of how much time has gone, tasks take far longer than expected, and the day ends without the work you planned getting done. This is where Rize's passive tracking is genuinely useful — it creates an honest record that makes the invisible visible.</p>
+
+      <p>Seeing that you spent 3 hours on email when you meant to spend 30 minutes, or that your "focus time" was actually 45 minutes of real work across a 4-hour stretch, is the kind of data that can motivate genuine change in how you structure your day.</p>
+
+      <h3>If your problem is both</h3>
+
+      <p>Use both. They don't conflict — Nook runs in a browser tab or on your phone while Rize runs in the background on your desktop. You can be in a Nook room (body doubling, Pomodoro rhythm, ambient sound) while Rize is quietly tracking what you're actually working on. At the end of the day, Rize tells you whether you succeeded; Nook helped you try.</p>
+
+      <blockquote>"I use Nook to actually get into work, and Rize to see if I did."</blockquote>
+
+      <hr />
+
+      <h2>Who should choose which</h2>
+
+      <div class="summary-grid">
+        <div class="summary-card summary-card--nook">
+          <h3>Start with Nook if…</h3>
+          <ul>
+            <li>You struggle to start tasks at all</li>
+            <li>Working alone feels impossible or draining</li>
+            <li>You want free, zero-friction body doubling</li>
+            <li>You're on Android (Rize is desktop-only)</li>
+            <li>You want ambient sound alongside your work</li>
+            <li>You don't want another subscription</li>
+          </ul>
+        </div>
+        <div class="summary-card summary-card--rize">
+          <h3>Add Rize if…</h3>
+          <ul>
+            <li>You lose track of where time goes</li>
+            <li>You want honest data on your work patterns</li>
+            <li>You work on Mac or Windows desktop</li>
+            <li>You want structured focus sessions with analytics</li>
+            <li>Insights and trends help you build habits</li>
+          </ul>
+        </div>
+      </div>
+
+      <hr />
+
+      <div class="verdict">
+        <h2>Verdict</h2>
+        <p><strong>Nook and Rize address different stages of the ADHD focus problem.</strong> Rize is a diagnostic tool — it shows you the patterns that are costing you time. Nook is an activation tool — it puts you in a room with other people so you can actually do the work.</p>
+        <p>If you're choosing only one: <strong>start with Nook</strong>. It's free, requires no account, and the body doubling effect is immediate — you feel it the first time you join a room. If activation isn't your bottleneck but time awareness is, add Rize on top.</p>
+        <p>For ADHD body doubling specifically — the co-presence of real people working alongside you — Nook is the dedicated tool. Rize doesn't offer that; it's a powerful complement, not a replacement.</p>
+      </div>
+
+      <div class="post-cta">
+        <p>Nook is free, requires no account, and works on web and Android. Join a room and experience body doubling for yourself — in under 10 seconds.</p>
+        <a href="https://nook.moonga.studio" target="_blank" rel="noopener">Try Nook free →</a>
+      </div>
+
+    </article>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a href="index.html">← Blog</a>
+        <a href="../privacy.html">Privacy</a>
+        <a href="mailto:hello@moonga.studio">Contact</a>
+      </div>
+      <span class="footer-copy">© 2026 Moonga Studio</span>
+    </div>
+  </footer>
+
+</body>
+</html>
