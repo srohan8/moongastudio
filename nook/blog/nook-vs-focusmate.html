@@ -43,12 +43,15 @@
     body { background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 17px; line-height: 1.75; -webkit-font-smoothing: antialiased; }
 
     nav { position: sticky; top: 0; z-index: 100; backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); background: rgba(240,235,224,.88); border-bottom: 1px solid var(--rule); }
-    .nav-inner { max-width: 720px; margin: 0 auto; padding: 0 24px; height: 52px; display: flex; align-items: center; justify-content: space-between; }
-    .nav-left { display: flex; align-items: center; gap: 8px; font-size: .8rem; color: var(--ink-soft); flex-wrap: wrap; }
-    .nav-left a { color: var(--ink-soft); text-decoration: none; transition: color .15s; }
-    .nav-left a:hover { color: var(--ink); }
+    .nav-inner { max-width: 860px; margin: 0 auto; padding: 0 24px; height: 52px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-brand { display: flex; align-items: center; text-decoration: none; }
+    .nav-logo-full { height: 38px; width: auto; }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
+    .nav-links a { font-size: .75rem; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft); text-decoration: none; transition: color .2s; }
+    .nav-links a:hover { color: var(--ink); }
     .nav-cta { font-size: .8rem; letter-spacing: .06em; text-transform: uppercase; color: var(--ink); text-decoration: none; border: 1px solid rgba(58,50,40,.35); border-radius: 40px; padding: 6px 18px; transition: background .18s, color .18s; flex-shrink: 0; }
     .nav-cta:hover { background: var(--ink); color: var(--bg); }
+    @media (max-width: 600px) { .nav-links { display: none; } }
 
     .container { max-width: 680px; margin: 0 auto; padding: 0 24px; }
 
@@ -119,14 +122,15 @@
 
   <nav>
     <div class="nav-inner">
-      <div class="nav-left">
-        <a href="../index.html">Nook</a>
-        <span>›</span>
-        <a href="index.html">Blog</a>
-        <span>›</span>
-        <span>Nook vs Focusmate</span>
-      </div>
-      <a class="nav-cta" href="https://nook.moonga.studio" target="_blank" rel="noopener">Try Nook free</a>
+      <a href="/" class="nav-brand">
+        <img src="../../logo-light.svg" alt="Moonga" class="nav-logo-full" />
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Nook</a></li>
+        <li><a href="index.html">Blog</a></li>
+        <li><a href="mailto:hello@moonga.studio">Contact</a></li>
+      </ul>
+      <a class="nav-cta" href="https://nook.moonga.studio" target="_blank" rel="noopener">Open app</a>
     </div>
   </nav>
 

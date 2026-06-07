@@ -23,15 +23,15 @@
     /* NAV */
     nav { position: sticky; top: 0; z-index: 100; backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); background: rgba(240,235,224,.88); border-bottom: 1px solid var(--rule); }
     .nav-inner { max-width: 720px; margin: 0 auto; padding: 0 24px; height: 52px; display: flex; align-items: center; justify-content: space-between; }
-    .nav-left { display: flex; align-items: center; gap: 10px; }
-    .nav-studio { display: flex; align-items: center; text-decoration: none; }
-    .nav-studio img { height: 20px; width: auto; opacity: .7; transition: opacity .15s; }
-    .nav-studio:hover img { opacity: 1; }
-    .nav-sep { color: var(--rule); font-size: .7rem; }
-    .nav-app { font-family: var(--serif); font-size: 1.1rem; font-weight: 400; color: var(--ink); text-decoration: none; }
-    .nav-blog { font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-soft); }
+    .nav-brand { display: flex; align-items: center; text-decoration: none; }
+    .nav-logo-full { height: 38px; width: auto; }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
+    .nav-links a { font-size: .75rem; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft); text-decoration: none; transition: color .2s; }
+    .nav-links a:hover { color: var(--ink); }
+    .nav-links a.active { color: var(--ink); font-weight: 400; }
     .nav-cta { font-family: var(--sans); font-size: .8rem; letter-spacing: .06em; text-transform: uppercase; color: var(--ink); text-decoration: none; border: 1px solid rgba(58,50,40,.35); border-radius: 40px; padding: 6px 18px; transition: background .18s, color .18s; }
     .nav-cta:hover { background: var(--ink); color: var(--bg); }
+    @media (max-width: 600px) { .nav-links { display: none; } }
 
     /* LAYOUT */
     .container { max-width: 720px; margin: 0 auto; padding: 0 24px; }
@@ -74,13 +74,14 @@
 
   <nav>
     <div class="nav-inner">
-      <div class="nav-left">
-        <a href="../index.html" class="nav-studio"><img src="../../../logo-light.svg" alt="Moonga" /></a>
-        <span class="nav-sep">✦</span>
-        <a href="../index.html" class="nav-app">Nook</a>
-        <span class="nav-sep">/</span>
-        <span class="nav-blog">Blog</span>
-      </div>
+      <a href="/" class="nav-brand">
+        <img src="../../logo-light.svg" alt="Moonga" class="nav-logo-full" />
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Nook</a></li>
+        <li><a href="index.html" class="active">Blog</a></li>
+        <li><a href="mailto:hello@moonga.studio">Contact</a></li>
+      </ul>
       <a class="nav-cta" href="https://nook.moonga.studio" target="_blank" rel="noopener">Open app</a>
     </div>
   </nav>

@@ -88,30 +88,11 @@
       align-items: center;
       justify-content: space-between;
     }
-    .nav-left {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .nav-studio {
-      display: flex;
-      align-items: center;
-      text-decoration: none;
-    }
-    .nav-studio img { height: 22px; width: auto; opacity: .7; transition: opacity .15s; }
-    .nav-studio:hover img { opacity: 1; }
-    .nav-sep { color: var(--rule); font-size: .7rem; }
-    .nav-app {
-      font-family: var(--serif);
-      font-size: 1.15rem;
-      font-weight: 400;
-      letter-spacing: .02em;
-      color: var(--ink);
-      text-decoration: none;
-    }
+    .nav-brand { display: flex; align-items: center; text-decoration: none; }
+    .nav-logo-full { height: 38px; width: auto; }
     .nav-links {
       display: flex;
-      gap: 2rem;
+      gap: 2.5rem;
       list-style: none;
       align-items: center;
     }
@@ -501,13 +482,9 @@
   <!-- NAV -->
   <nav>
     <div class="nav-inner">
-      <div class="nav-left">
-        <a href="/" class="nav-studio">
-          <img src="../logo-light.svg" alt="Moonga" />
-        </a>
-        <span class="nav-sep">✦</span>
-        <a href="/nook/" class="nav-app">Nook</a>
-      </div>
+      <a href="/" class="nav-brand">
+        <img src="../logo-light.svg" alt="Moonga" class="nav-logo-full" />
+      </a>
       <ul class="nav-links">
         <li><a href="blog/index.html">Blog</a></li>
         <li><a href="mailto:hello@moonga.studio">Contact</a></li>
