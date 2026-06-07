@@ -109,6 +109,21 @@
       color: var(--ink);
       text-decoration: none;
     }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      align-items: center;
+    }
+    .nav-links a {
+      font-size: .75rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      text-decoration: none;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--ink); }
     .nav-cta {
       font-family: var(--sans);
       font-size: .8rem;
@@ -123,6 +138,9 @@
       transition: background .18s, color .18s;
     }
     .nav-cta:hover { background: var(--ink); color: var(--bg); }
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+    }
 
     /* ── HERO ── */
     .hero {
@@ -490,6 +508,10 @@
         <span class="nav-sep">✦</span>
         <a href="/nook/" class="nav-app">Nook</a>
       </div>
+      <ul class="nav-links">
+        <li><a href="blog/index.html">Blog</a></li>
+        <li><a href="mailto:hello@moonga.studio">Contact</a></li>
+      </ul>
       <a class="nav-cta" href="https://nook.moonga.studio" target="_blank" rel="noopener">Open app</a>
     </div>
   </nav>
