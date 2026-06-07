@@ -72,21 +72,18 @@
 
     /* ── NAV ── */
     nav {
-      position: sticky;
-      top: 0;
+      position: fixed;
+      top: 0; left: 0; right: 0;
       z-index: 100;
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      background: rgba(240,235,224,.88);
-      border-bottom: 1px solid var(--rule);
-    }
-    .nav-inner {
-      padding: 0 3rem;
-      height: 56px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 2rem;
+      padding: 1.1rem 3rem;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      background: rgba(240,235,224,.92);
+      border-bottom: 1px solid var(--rule);
     }
     .nav-brand-group { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
     .nav-moonga { display: flex; align-items: center; text-decoration: none; }
@@ -125,13 +122,13 @@
     }
     .nav-cta:hover { background: var(--ink); color: var(--bg); }
     @media (max-width: 700px) {
-      .nav-inner { padding: 0 1.5rem; }
+      nav { padding: 1rem 1.5rem; }
       .nav-links { display: none; }
     }
 
     /* ── HERO ── */
     .hero {
-      padding: 88px 24px 72px;
+      padding: 140px 24px 72px;
       text-align: center;
     }
     .hero-icon {
@@ -487,22 +484,20 @@
 
   <!-- NAV -->
   <nav>
-    <div class="nav-inner">
-      <div class="nav-brand-group">
-        <a href="/" class="nav-moonga">
-          <img src="../favicon.png" alt="Moonga" class="nav-moonga-icon" />
-        </a>
-        <a href="/nook/" class="nav-brand">
-          <img src="nook-wordmark.svg" alt="Nook" class="nav-logo-full" />
-        </a>
-      </div>
-      <ul class="nav-links">
-        <li><a href="blog/index.html">Blog</a></li>
-        <li><a href="pricing.html">Pricing</a></li>
-        <li><a href="mailto:hello@moonga.studio">Contact</a></li>
-      </ul>
-      <a class="nav-cta" href="https://nook.moonga.studio" target="_blank" rel="noopener">Open app</a>
+    <div class="nav-brand-group">
+      <a href="/" class="nav-moonga">
+        <img src="../favicon.png" alt="Moonga" class="nav-moonga-icon" />
+      </a>
+      <a href="/nook/" class="nav-brand">
+        <img src="nook-wordmark.svg" alt="Nook" class="nav-logo-full" />
+      </a>
     </div>
+    <ul class="nav-links">
+      <li><a href="blog/index.html">Blog</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="mailto:hello@moonga.studio">Contact</a></li>
+    </ul>
+    <a class="nav-cta" href="https://nook.moonga.studio" target="_blank" rel="noopener">Open app</a>
   </nav>
 
   <!-- HERO -->
