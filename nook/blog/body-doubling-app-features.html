@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What features does a body doubling app offer? — Nook Blog</title>
+  <meta name="description" content="A body doubling app should offer ambient co-presence, optional timers, focus sounds, and a distraction-free environment. Here's what to look for — and what Nook includes." />
+  <link rel="canonical" href="https://www.moonga.studio/nook/blog/body-doubling-app-features.html" />
+  <link rel="icon" type="image/png" href="../favicon.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "What features does a body doubling app offer?",
+    "description": "A body doubling app should offer ambient co-presence, optional timers, focus sounds, and a distraction-free environment. Here's what to look for — and what Nook includes.",
+    "datePublished": "2026-06-07",
+    "dateModified": "2026-06-07",
+    "author": { "@type": "Organization", "name": "Moonga Studio", "url": "https://www.moonga.studio" },
+    "publisher": { "@type": "Organization", "name": "Moonga Studio" },
+    "url": "https://www.moonga.studio/nook/blog/body-doubling-app-features.html",
+    "about": [
+      { "@type": "Thing", "name": "Body doubling" },
+      { "@type": "Thing", "name": "Virtual co-working" },
+      { "@type": "Thing", "name": "ADHD productivity" }
+    ],
+    "mentions": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "Nook",
+        "url": "https://nook.moonga.studio",
+        "applicationCategory": "ProductivityApplication",
+        "featureList": ["Body doubling", "Ambient co-presence", "Pomodoro timer", "Focus sounds", "Session intentions", "Private rooms", "No camera required"],
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+      }
+    ]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #F0EBE0; --ink: #3A3228; --ink-soft: #66594B;
+      --rule: rgba(58,50,40,.12); --terra: #C65A3A;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'Lato', system-ui, sans-serif;
+    }
+    body { background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 17px; line-height: 1.75; -webkit-font-smoothing: antialiased; }
+
+    nav { position: sticky; top: 0; z-index: 100; backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); background: rgba(240,235,224,.88); border-bottom: 1px solid var(--rule); }
+    .nav-inner { padding: 0 3rem; height: 56px; display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+    .nav-brand-group { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+    .nav-moonga { display: flex; align-items: center; text-decoration: none; }
+    .nav-moonga-icon { height: 28px; width: auto; opacity: .65; transition: opacity .15s; }
+    .nav-moonga:hover .nav-moonga-icon { opacity: 1; }
+    .nav-brand { display: flex; align-items: center; text-decoration: none; }
+    .nav-logo-full { height: 28px; width: auto; }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
+    .nav-links a { font-size: .75rem; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft); text-decoration: none; transition: color .2s; }
+    .nav-links a:hover { color: var(--ink); }
+    .nav-cta { font-size: .8rem; letter-spacing: .06em; text-transform: uppercase; color: var(--ink); text-decoration: none; border: 1px solid rgba(58,50,40,.35); border-radius: 40px; padding: 6px 18px; flex-shrink: 0; transition: background .18s, color .18s; }
+    .nav-cta:hover { background: var(--ink); color: var(--bg); }
+    @media (max-width: 700px) { .nav-inner { padding: 0 1.5rem; } .nav-links { display: none; } }
+
+    .container { max-width: 680px; margin: 0 auto; padding: 0 24px; }
+    .post-header { padding: 56px 0 40px; border-bottom: 1px solid var(--rule); margin-bottom: 48px; }
+    .post-meta { font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-soft); display: flex; align-items: center; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
+    .post-tag { background: rgba(198,90,58,.1); color: var(--terra); border-radius: 100px; padding: 2px 10px; }
+    .post-title { font-family: var(--serif); font-size: clamp(1.9rem, 5vw, 2.8rem); font-weight: 300; line-height: 1.1; margin-bottom: 16px; }
+    .post-lede { font-size: 1.05rem; color: var(--ink-soft); font-weight: 300; line-height: 1.65; }
+
+    .post-body { padding-bottom: 72px; }
+    .post-body p { margin-bottom: 1.4rem; }
+    .post-body h2 { font-family: var(--serif); font-size: 1.65rem; font-weight: 300; margin: 2.5rem 0 .9rem; }
+    .post-body h3 { font-family: var(--serif); font-size: 1.2rem; font-weight: 400; margin: 2rem 0 .75rem; }
+    .post-body ul, .post-body ol { padding-left: 1.4rem; margin-bottom: 1.4rem; }
+    .post-body li { margin-bottom: .5rem; }
+    .post-body blockquote { border-left: 3px solid var(--terra); padding-left: 1.25rem; margin: 1.75rem 0; font-family: var(--serif); font-size: 1.15rem; font-style: italic; font-weight: 300; color: var(--ink-soft); }
+    .post-body a { color: var(--terra); text-underline-offset: 3px; }
+    .post-body hr { border: none; border-top: 1px solid var(--rule); margin: 2.5rem 0; }
+    .post-body strong { font-weight: 600; }
+
+    .feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 1.75rem 0; }
+    .feature-card { border: 1px solid var(--rule); border-radius: 12px; padding: 18px 16px; }
+    .feature-card h3 { font-family: var(--serif); font-size: 1rem; font-weight: 400; margin: 0 0 .4rem; }
+    .feature-card p { font-size: .88rem; color: var(--ink-soft); margin: 0; line-height: 1.55; }
+    @media (max-width: 540px) { .feature-grid { grid-template-columns: 1fr; } }
+
+    .post-cta { background: rgba(198,90,58,.06); border: 1px solid rgba(198,90,58,.2); border-radius: 16px; padding: 28px 32px; margin: 2.5rem 0; text-align: center; }
+    .post-cta p { margin-bottom: 16px; font-size: .95rem; color: var(--ink-soft); }
+    .post-cta a { display: inline-block; background: var(--ink); color: var(--bg); font-size: .8rem; letter-spacing: .06em; text-transform: uppercase; text-decoration: none; padding: 12px 28px; border-radius: 40px; transition: opacity .18s; }
+    .post-cta a:hover { opacity: .8; }
+
+    footer { padding: 32px 24px; border-top: 1px solid var(--rule); }
+    .footer-inner { max-width: 860px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a { font-size: .8rem; color: var(--ink-soft); text-decoration: none; transition: color .15s; }
+    .footer-links a:hover { color: var(--ink); }
+    .footer-copy { font-size: .75rem; color: var(--ink-soft); opacity: .6; }
+    @media (max-width: 600px) { .post-header { padding: 36px 0 28px; margin-bottom: 32px; } }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <div class="nav-brand-group">
+        <a href="/" class="nav-moonga">
+          <img src="../../favicon.png" alt="Moonga" class="nav-moonga-icon" />
+        </a>
+        <a href="../index.html" class="nav-brand">
+          <img src="../nook-wordmark.svg" alt="Nook" class="nav-logo-full" />
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="index.html">Blog</a></li>
+        <li><a href="mailto:hello@moonga.studio">Contact</a></li>
+      </ul>
+      <a class="nav-cta" href="https://nook.moonga.studio" target="_blank" rel="noopener">Open app</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <header class="post-header">
+      <div class="post-meta">
+        <span>2026-06-07</span>
+        <span class="post-tag">Body Doubling</span>
+        <span>4 min read</span>
+      </div>
+      <h1 class="post-title">What features does a body doubling app offer?</h1>
+      <p class="post-lede">The best body doubling apps share a core set of features — ambient presence, low friction, and a quiet environment that signals it's time to focus. Here's what to look for and why each feature matters.</p>
+    </header>
+
+    <article class="post-body">
+
+      <p>Body doubling is one of the oldest focus strategies for ADHD — working alongside someone else to borrow their nervous system regulation. Body doubling apps bring this online. <a href="https://nook.moonga.studio" target="_blank" rel="noopener">Nook</a>, for example, lets you join a virtual room with other real users who are working quietly — no camera required, no agenda, just ambient co-presence.</p>
+
+      <p>But not all apps in this space are built the same way. The feature set determines whether the experience actually helps you focus or just adds another tab to your browser. Here's what matters and why.</p>
+
+      <hr />
+
+      <h2>What features does a body doubling app need?</h2>
+
+      <h3>Ambient co-presence — the core mechanic</h3>
+
+      <p>The whole point of body doubling is that someone else is there. In a good app, this is communicated subtly: a live count of people in the room, visible intentions from other users, or a sense of shared space. You shouldn't need to actively interact with anyone to feel the benefit.</p>
+
+      <p>Nook shows you who's in the room and what they're working on (if they've chosen to share it). That light social context — real people, real work — is what generates the ambient accountability that makes body doubling work.</p>
+
+      <h3>No-camera option</h3>
+
+      <p>Camera-based accountability tools (like video co-working calls) require you to look presentable, set up your environment, and schedule time in advance. For many people with ADHD, that's exactly the kind of activation energy that prevents starting.</p>
+
+      <p>The best body doubling apps don't require cameras at all. Nook is camera-free by design — you join a room and work. The barrier to entry is as close to zero as possible.</p>
+
+      <h3>Ambient sound and scene environments</h3>
+
+      <p>Sound plays a significant role in focus regulation, particularly for ADHD brains. A coffee shop hum, a gentle waterfall, or the quiet murmur of a library create an audio environment that signals "this is a working context."</p>
+
+      <p>Nook offers themed room environments with ambient audio — café sounds, nature sounds, rain, fireplace — so you can choose the environment that works for your brain that day without leaving the app or opening a second window.</p>
+
+      <h3>Pomodoro timer / session timing</h3>
+
+      <p>Work sessions without visible time structure are dangerous for ADHD time blindness. A built-in Pomodoro timer (typically 25 minutes work, 5 minutes break) gives the session a visible horizon. You're not working until you finish. You're working until the timer goes off.</p>
+
+      <p>Having this built into the room — rather than requiring a separate app — removes a step from the setup process. Friction reduction is essential for ADHD. Nook includes per-room timers so you can start a work sprint without switching contexts.</p>
+
+      <h3>Session intentions</h3>
+
+      <p>Naming what you're working on before a session starts is a remarkably effective focus tool. It converts a vague "I should work" into a concrete commitment: "I'm writing section two of this report until the timer goes off."</p>
+
+      <p>Nook prompts for an intention when you enter a room. Other users in the room can see your intention (if you choose to share it), which adds a gentle layer of social accountability. But the main benefit is the act of writing it down — it anchors you to a specific task before distraction has a chance to pull you away.</p>
+
+      <h3>Low friction to start</h3>
+
+      <p>Every step between "I want to focus" and "I am focusing" is an opportunity to abandon the attempt. The best body doubling apps minimise these steps ruthlessly. Nook is a web app — no download, no account required to get started. Open the link, pick a room, start working.</p>
+
+      <h3>Private rooms</h3>
+
+      <p>Shared public rooms work for many people, but sometimes you want to work alongside a specific group — your team, a few friends, an accountability partner. Private rooms let you create a dedicated space that only people with the link can join.</p>
+
+      <p>Nook includes private room hosting. The first 1,000 founding members get private rooms free for life. After that, private rooms are available on the Host plan at $4/month.</p>
+
+      <hr />
+
+      <h2>What features don't body doubling apps need?</h2>
+
+      <p>A common failure mode is app bloat — adding features that create friction or distraction rather than reducing it. Body doubling apps don't need leaderboards, streaks, social feeds, notifications, or gamification. These mechanics might increase engagement in the short term, but they work against the calm, uninterrupted focus environment that makes body doubling effective.</p>
+
+      <p>Nook is deliberately minimal. No social feed, no badges, no push notifications. The app exists to help you work — and then get out of the way.</p>
+
+      <hr />
+
+      <h2>Feature summary: what Nook offers</h2>
+
+      <div class="feature-grid">
+        <div class="feature-card">
+          <h3>Ambient co-presence</h3>
+          <p>See who's in the room and what they're working on. Real people, real work.</p>
+        </div>
+        <div class="feature-card">
+          <h3>No camera required</h3>
+          <p>Join any room instantly with no setup, no video, no scheduling.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Themed environments</h3>
+          <p>Café, meadow, waterfall, after hours — choose your ambient sound.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Built-in Pomodoro timer</h3>
+          <p>Work in visible sprints without switching to a separate app.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Session intentions</h3>
+          <p>Name your task before you start. Optional sharing with roommates.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Private rooms</h3>
+          <p>Work with your team or accountability partner in a dedicated space.</p>
+        </div>
+      </div>
+
+      <div class="post-cta">
+        <p>Nook is free to try — no account required. Pick a room and start working alongside real people.</p>
+        <a href="https://nook.moonga.studio" target="_blank" rel="noopener">Open Nook →</a>
+      </div>
+
+    </article>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a href="index.html">← Blog</a>
+        <a href="../privacy.html">Privacy</a>
+        <a href="mailto:hello@moonga.studio">Contact</a>
+      </div>
+      <span class="footer-copy">© 2026 Moonga Studio</span>
+    </div>
+  </footer>
+
+</body>
+</html>
