@@ -87,11 +87,8 @@
       justify-content: space-between;
       gap: 2rem;
     }
-    .nav-brand-group { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
-    .nav-brand { display: flex; align-items: center; text-decoration: none; }
-    .nav-logo-full { height: 38px; width: auto; }
-    .nav-sep { color: rgba(58,50,40,.25); font-size: .75rem; }
-    .nav-product { font-family: var(--serif); font-size: 1.1rem; font-weight: 400; color: var(--ink); letter-spacing: .01em; }
+    .nav-brand { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
+    .nav-logo-full { height: 30px; width: auto; }
     .nav-links {
       display: flex;
       gap: 2.5rem;
@@ -486,13 +483,9 @@
   <!-- NAV -->
   <nav>
     <div class="nav-inner">
-      <div class="nav-brand-group">
-        <a href="/" class="nav-brand">
-          <img src="../logo-light.svg" alt="Moonga" class="nav-logo-full" />
-        </a>
-        <span class="nav-sep">·</span>
-        <span class="nav-product">Nook</span>
-      </div>
+      <a href="/nook/" class="nav-brand">
+        <img src="nook-wordmark.svg" alt="Nook" class="nav-logo-full" />
+      </a>
       <ul class="nav-links">
         <li><a href="blog/index.html">Blog</a></li>
         <li><a href="mailto:hello@moonga.studio">Contact</a></li>
