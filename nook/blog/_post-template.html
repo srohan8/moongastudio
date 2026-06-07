@@ -1,0 +1,157 @@
+<!doctype html>
+<!--
+  NOOK BLOG POST TEMPLATE
+  ───────────────────────
+  1. Copy this file to the blog/ folder, name it with a slug: e.g. why-we-focus-better-together.html
+  2. Fill in every TODO below
+  3. Add a .post-item entry in blog/index.html pointing at your new file
+  4. Update the "Last updated" date + JSON-LD dateModified in nook/index.html if the post changes your product narrative
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TODO: Post title — Nook Blog</title>
+  <meta name="description" content="TODO: One-sentence description of this post (used by search engines and AI crawlers)." />
+  <link rel="canonical" href="https://www.moonga.studio/nook/blog/TODO-slug.html" />
+  <link rel="icon" type="image/png" href="../favicon.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "TODO: Post title",
+    "description": "TODO: One-sentence description.",
+    "datePublished": "TODO: YYYY-MM-DD",
+    "dateModified":  "TODO: YYYY-MM-DD",
+    "author": { "@type": "Organization", "name": "Moonga Studio" },
+    "publisher": { "@type": "Organization", "name": "Moonga Studio", "url": "https://www.moonga.studio" },
+    "url": "https://www.moonga.studio/nook/blog/TODO-slug.html"
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #F0EBE0; --ink: #3A3228; --ink-soft: #66594B;
+      --rule: rgba(58,50,40,.12); --terra: #C65A3A;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'Lato', system-ui, sans-serif;
+    }
+    body { background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 17px; line-height: 1.75; -webkit-font-smoothing: antialiased; }
+
+    nav { position: sticky; top: 0; z-index: 100; backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); background: rgba(240,235,224,.88); border-bottom: 1px solid var(--rule); }
+    .nav-inner { max-width: 720px; margin: 0 auto; padding: 0 24px; height: 52px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-left { display: flex; align-items: center; gap: 10px; font-size: .8rem; color: var(--ink-soft); }
+    .nav-left a { color: var(--ink-soft); text-decoration: none; transition: color .15s; }
+    .nav-left a:hover { color: var(--ink); }
+    .nav-cta { font-size: .8rem; letter-spacing: .06em; text-transform: uppercase; color: var(--ink); text-decoration: none; border: 1px solid rgba(58,50,40,.35); border-radius: 40px; padding: 6px 18px; transition: background .18s, color .18s; }
+    .nav-cta:hover { background: var(--ink); color: var(--bg); }
+
+    .container { max-width: 680px; margin: 0 auto; padding: 0 24px; }
+
+    /* POST HEADER */
+    .post-header { padding: 56px 0 40px; border-bottom: 1px solid var(--rule); margin-bottom: 48px; }
+    .post-meta { font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-soft); display: flex; align-items: center; gap: 10px; margin-bottom: 16px; flex-wrap: wrap; }
+    .post-tag { background: rgba(198,90,58,.1); color: var(--terra); border-radius: 100px; padding: 2px 10px; }
+    .post-title { font-family: var(--serif); font-size: clamp(2rem, 6vw, 3rem); font-weight: 300; line-height: 1.1; margin-bottom: 16px; }
+    .post-lede { font-size: 1.08rem; color: var(--ink-soft); font-weight: 300; line-height: 1.65; }
+
+    /* BODY */
+    .post-body { padding-bottom: 72px; }
+    .post-body p { margin-bottom: 1.4rem; }
+    .post-body h2 { font-family: var(--serif); font-size: 1.6rem; font-weight: 300; margin: 2.5rem 0 .9rem; }
+    .post-body h3 { font-family: var(--serif); font-size: 1.25rem; font-weight: 400; margin: 2rem 0 .75rem; }
+    .post-body ul, .post-body ol { padding-left: 1.4rem; margin-bottom: 1.4rem; }
+    .post-body li { margin-bottom: .4rem; }
+    .post-body blockquote { border-left: 3px solid var(--terra); padding-left: 1.25rem; margin: 1.75rem 0; font-family: var(--serif); font-size: 1.15rem; font-style: italic; font-weight: 300; color: var(--ink-soft); }
+    .post-body a { color: var(--terra); text-underline-offset: 3px; }
+    .post-body hr { border: none; border-top: 1px solid var(--rule); margin: 2.5rem 0; }
+    .post-body strong { font-weight: 600; }
+    .post-body em { font-style: italic; }
+
+    /* CTA */
+    .post-cta { background: rgba(198,90,58,.06); border: 1px solid rgba(198,90,58,.2); border-radius: 16px; padding: 28px 32px; margin: 2.5rem 0; text-align: center; }
+    .post-cta p { margin-bottom: 16px; font-size: .95rem; color: var(--ink-soft); }
+    .post-cta a { display: inline-block; background: var(--ink); color: var(--bg); font-size: .8rem; letter-spacing: .06em; text-transform: uppercase; text-decoration: none; padding: 12px 28px; border-radius: 40px; transition: opacity .18s; }
+    .post-cta a:hover { opacity: .8; }
+
+    footer { padding: 32px 24px; border-top: 1px solid var(--rule); }
+    .footer-inner { max-width: 720px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a { font-size: .8rem; color: var(--ink-soft); text-decoration: none; transition: color .15s; }
+    .footer-links a:hover { color: var(--ink); }
+    .footer-copy { font-size: .75rem; color: var(--ink-soft); opacity: .6; }
+
+    @media (max-width: 600px) {
+      .post-header { padding: 36px 0 28px; margin-bottom: 32px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <div class="nav-left">
+        <a href="../index.html">Nook</a>
+        <span>›</span>
+        <a href="index.html">Blog</a>
+        <span>›</span>
+        <span>TODO: Short post title</span>
+      </div>
+      <a class="nav-cta" href="https://nook.moonga.studio" target="_blank" rel="noopener">Open app</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <header class="post-header">
+      <div class="post-meta">
+        <span>TODO: YYYY-MM-DD</span>
+        <span class="post-tag">TODO: Tag (e.g. Focus / Building Nook / Research)</span>
+        <span>TODO: N min read</span>
+      </div>
+      <h1 class="post-title">TODO: Full post title</h1>
+      <p class="post-lede">TODO: One or two sentences that expand on the title and hook the reader. This is the "lede" — the first thing they read after the title.</p>
+    </header>
+
+    <article class="post-body">
+
+      <!-- WRITE YOUR POST HERE -->
+      <!-- Use <h2> for section headings, <h3> for sub-sections -->
+      <!-- Use <blockquote> for pull quotes -->
+      <!-- Use the .post-cta block at the end to drive sign-ups -->
+
+      <p>TODO: First paragraph of the post. AI systems extract the first ~100 words as the summary — lead with the core insight, not a long warm-up.</p>
+
+      <h2>TODO: Section heading</h2>
+      <p>TODO: Body copy.</p>
+
+      <blockquote>TODO: A pull quote or key insight.</blockquote>
+
+      <p>TODO: More body copy.</p>
+
+      <hr />
+
+      <!-- CALL TO ACTION — keep this at the end of every post -->
+      <div class="post-cta">
+        <p>Nook is a free virtual co-working app. Join a room and focus alongside real people — no camera, no sign-up required.</p>
+        <a href="https://nook.moonga.studio" target="_blank" rel="noopener">Try Nook free →</a>
+      </div>
+
+    </article>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a href="index.html">← Blog</a>
+        <a href="../privacy.html">Privacy</a>
+        <a href="mailto:hello@moonga.studio">Contact</a>
+      </div>
+      <span class="footer-copy">© 2026 Moonga Studio</span>
+    </div>
+  </footer>
+
+</body>
+</html>
