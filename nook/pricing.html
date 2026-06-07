@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nook Pricing — Free to focus. $4/mo to host.</title>
+  <meta name="description" content="Nook is free to use. All public co-working rooms are free forever — no account required. Private room hosting is $4/month. The first 1,000 members get private rooms free for life." />
+  <link rel="canonical" href="https://www.moonga.studio/nook/pricing.html" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Nook",
+    "url": "https://www.moonga.studio/nook/",
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Free",
+        "price": "0",
+        "priceCurrency": "USD",
+        "description": "All public co-working rooms. No account required."
+      },
+      {
+        "@type": "Offer",
+        "name": "Host",
+        "price": "4",
+        "priceCurrency": "USD",
+        "description": "Create and host private rooms. Invite friends with a code.",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "4",
+          "priceCurrency": "USD",
+          "unitCode": "MON"
+        }
+      }
+    ]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #F0EBE0; --ink: #3A3228; --ink-soft: #66594B;
+      --rule: rgba(58,50,40,.12); --terra: #C65A3A;
+      --card-bg: rgba(255,252,247,.72);
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'Lato', system-ui, sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 16px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+
+    /* NAV */
+    nav { position: sticky; top: 0; z-index: 100; backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); background: rgba(240,235,224,.88); border-bottom: 1px solid var(--rule); }
+    .nav-inner { padding: 0 3rem; height: 56px; display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+    .nav-brand-group { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+    .nav-moonga { display: flex; align-items: center; text-decoration: none; }
+    .nav-moonga-icon { height: 28px; width: auto; opacity: .65; transition: opacity .15s; }
+    .nav-moonga:hover .nav-moonga-icon { opacity: 1; }
+    .nav-brand { display: flex; align-items: center; text-decoration: none; }
+    .nav-logo-full { height: 28px; width: auto; }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
+    .nav-links a { font-size: .75rem; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft); text-decoration: none; transition: color .2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--ink); }
+    .nav-cta { font-size: .8rem; letter-spacing: .06em; text-transform: uppercase; color: var(--ink); text-decoration: none; border: 1px solid rgba(58,50,40,.35); border-radius: 40px; padding: 6px 18px; flex-shrink: 0; transition: background .18s, color .18s; }
+    .nav-cta:hover { background: var(--ink); color: var(--bg); }
+    @media (max-width: 700px) { .nav-inner { padding: 0 1.5rem; } .nav-links { display: none; } }
+
+    /* LAYOUT */
+    .container { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+
+    /* HEADER */
+    .page-header { padding: 72px 0 56px; text-align: center; }
+    .page-eyebrow { font-size: .72rem; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 16px; }
+    .page-title { font-family: var(--serif); font-size: clamp(2.4rem, 7vw, 3.6rem); font-weight: 300; line-height: 1.1; margin-bottom: 16px; }
+    .page-sub { font-size: 1rem; color: var(--ink-soft); font-weight: 300; max-width: 440px; margin: 0 auto; line-height: 1.65; }
+
+    /* TIERS */
+    .tiers { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 48px 0; }
+    .tier { background: var(--card-bg); border: 1px solid var(--rule); border-radius: 20px; padding: 36px 32px; }
+    .tier--paid { border-color: rgba(198,90,58,.3); background: rgba(198,90,58,.04); }
+    .tier-label { font-size: .7rem; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 20px; }
+    .tier--paid .tier-label { color: var(--terra); }
+    .tier-price { font-family: var(--serif); font-size: clamp(2.8rem, 6vw, 3.8rem); font-weight: 300; line-height: 1; margin-bottom: 6px; }
+    .tier-price span { font-size: 1rem; font-family: var(--sans); font-weight: 300; color: var(--ink-soft); vertical-align: middle; }
+    .tier-desc { font-size: .88rem; color: var(--ink-soft); margin-bottom: 28px; line-height: 1.6; }
+    .tier-features { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 32px; }
+    .tier-features li { font-size: .88rem; color: var(--ink-soft); display: flex; align-items: flex-start; gap: 10px; line-height: 1.5; }
+    .tier-features li::before { content: '✓'; color: var(--terra); font-size: .8rem; margin-top: 2px; flex-shrink: 0; }
+    .tier-cta { display: block; text-align: center; font-size: .8rem; letter-spacing: .06em; text-transform: uppercase; text-decoration: none; padding: 12px 24px; border-radius: 40px; transition: background .18s, color .18s, opacity .18s; }
+    .tier-cta--free { color: var(--ink); border: 1px solid rgba(58,50,40,.3); }
+    .tier-cta--free:hover { background: var(--ink); color: var(--bg); }
+    .tier-cta--paid { background: var(--ink); color: var(--bg); }
+    .tier-cta--paid:hover { opacity: .8; }
+
+    /* FOUNDING MEMBER */
+    .founding { background: rgba(198,90,58,.07); border: 1px solid rgba(198,90,58,.2); border-radius: 20px; padding: 40px 40px; margin: 0 0 56px; text-align: center; }
+    .founding-eyebrow { font-size: .7rem; letter-spacing: .16em; text-transform: uppercase; color: var(--terra); margin-bottom: 14px; }
+    .founding-title { font-family: var(--serif); font-size: clamp(1.6rem, 4vw, 2.2rem); font-weight: 300; line-height: 1.2; margin-bottom: 12px; }
+    .founding-body { font-size: .92rem; color: var(--ink-soft); max-width: 480px; margin: 0 auto 28px; line-height: 1.7; }
+    .founding-cta { display: inline-block; background: var(--terra); color: #FFF6E8; font-size: .8rem; letter-spacing: .06em; text-transform: uppercase; text-decoration: none; padding: 13px 32px; border-radius: 40px; transition: opacity .18s; }
+    .founding-cta:hover { opacity: .85; }
+    .founding-note { font-size: .75rem; color: var(--ink-soft); margin-top: 14px; letter-spacing: .02em; }
+
+    /* FAQ */
+    .faq { padding: 0 0 72px; }
+    .faq-title { font-family: var(--serif); font-size: 1.6rem; font-weight: 300; margin-bottom: 28px; }
+    .faq-list { display: flex; flex-direction: column; gap: 0; }
+    .faq-item { padding: 22px 0; border-top: 1px solid var(--rule); }
+    .faq-item:last-child { border-bottom: 1px solid var(--rule); }
+    .faq-q { font-family: var(--serif); font-size: 1.1rem; font-weight: 400; margin-bottom: 8px; }
+    .faq-a { font-size: .9rem; color: var(--ink-soft); line-height: 1.7; }
+
+    /* FOOTER */
+    footer { padding: 32px 24px; border-top: 1px solid var(--rule); }
+    .footer-inner { max-width: 860px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    .footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
+    .footer-links a { font-size: .8rem; color: var(--ink-soft); text-decoration: none; transition: color .15s; }
+    .footer-links a:hover { color: var(--ink); }
+    .footer-copy { font-size: .75rem; color: var(--ink-soft); opacity: .6; }
+
+    @media (max-width: 600px) {
+      .tiers { grid-template-columns: 1fr; }
+      .founding { padding: 32px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <div class="nav-brand-group">
+        <a href="/" class="nav-moonga">
+          <img src="../favicon.png" alt="Moonga" class="nav-moonga-icon" />
+        </a>
+        <a href="/nook/" class="nav-brand">
+          <img src="nook-wordmark.svg" alt="Nook" class="nav-logo-full" />
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="blog/index.html">Blog</a></li>
+        <li><a href="mailto:hello@moonga.studio">Contact</a></li>
+      </ul>
+      <a class="nav-cta" href="https://nook.moonga.studio" target="_blank" rel="noopener">Open app</a>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <header class="page-header">
+      <p class="page-eyebrow">Pricing</p>
+      <h1 class="page-title">Free to focus.<br>$4/mo to host.</h1>
+      <p class="page-sub">
+        Nook is free to use — all public rooms, forever. Private room hosting is $4 a month.
+        The first 1,000 members get hosting free for life.
+      </p>
+    </header>
+
+    <!-- FOUNDING MEMBER -->
+    <div class="founding">
+      <p class="founding-eyebrow">Founding member offer</p>
+      <h2 class="founding-title">Private rooms, free for life.</h2>
+      <p class="founding-body">
+        The first 1,000 people to join Nook get private room hosting included — permanently, at no cost.
+        No catch. No credit card. Just show up early.
+      </p>
+      <a class="founding-cta" href="https://nook.moonga.studio" target="_blank" rel="noopener">Claim your spot →</a>
+      <p class="founding-note">Limited to 1,000 founding members · spots are filling</p>
+    </div>
+
+    <!-- TIERS -->
+    <div class="tiers">
+
+      <div class="tier">
+        <p class="tier-label">Free · forever</p>
+        <p class="tier-price">$0</p>
+        <p class="tier-desc">No account needed. Drop in and focus.</p>
+        <ul class="tier-features">
+          <li>All four public rooms — Beach Café, The Meadow, The Cascade, After Hours</li>
+          <li>Ambient soundscapes and Pomodoro timers</li>
+          <li>Set your intention, see others working</li>
+          <li>Break-time chat (room rules apply)</li>
+          <li>Task list across sessions (with free account)</li>
+          <li>Friends and direct messages (with free account)</li>
+        </ul>
+        <a class="tier-cta tier-cta--free" href="https://nook.moonga.studio" target="_blank" rel="noopener">Open Nook</a>
+      </div>
+
+      <div class="tier tier--paid">
+        <p class="tier-label">Host · $4 / month</p>
+        <p class="tier-price">$4 <span>/ mo</span></p>
+        <p class="tier-desc">Create your own room. Invite your people.</p>
+        <ul class="tier-features">
+          <li>Everything in Free</li>
+          <li>Create private rooms with a custom code</li>
+          <li>Choose your own scene and ambient sound</li>
+          <li>Set your own timer and chat rules</li>
+          <li>Share a Spotify playlist link with the room</li>
+          <li>Cancel anytime — no lock-in</li>
+        </ul>
+        <a class="tier-cta tier-cta--paid" href="https://nook.moonga.studio" target="_blank" rel="noopener">Start hosting →</a>
+      </div>
+
+    </div>
+
+    <!-- FAQ -->
+    <section class="faq">
+      <h2 class="faq-title">Questions</h2>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <p class="faq-q">Do I need to sign up to use Nook?</p>
+          <p class="faq-a">No. You can enter any public room without an account. Creating an account (free) lets you save your task list, add friends, and send room invites.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-q">What's a founding member?</p>
+          <p class="faq-a">The first 1,000 people to join Nook. Founding members get private room hosting included free for life — even after we introduce paid hosting for new members. This offer won't come back once the spots are filled.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-q">How do private rooms work?</p>
+          <p class="faq-a">You create a room, choose a scene, sound, and timer setup, then share a short code with your friends. Anyone with the code can join. The room is yours — strangers can't wander in.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-q">Can I cancel hosting anytime?</p>
+          <p class="faq-a">Yes. No contracts, no lock-in. Cancel and your private room converts — it stays visible to existing members but won't accept new joins.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-q">Is Nook available on Android?</p>
+          <p class="faq-a">Yes — Nook is on Android via the Play Store, and also runs in any browser. The experience is the same across both.</p>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a href="index.html">← Nook</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="mailto:hello@moonga.studio">Contact</a>
+      </div>
+      <span class="footer-copy">© 2026 Moonga Studio</span>
+    </div>
+  </footer>
+
+</body>
+</html>
