@@ -46,8 +46,12 @@
 
     nav { position: sticky; top: 0; z-index: 100; backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); background: rgba(240,235,224,.88); border-bottom: 1px solid var(--rule); }
     .nav-inner { padding: 0 3rem; height: 56px; display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
-    .nav-brand { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
-    .nav-logo-full { height: 30px; width: auto; }
+    .nav-brand-group { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+    .nav-moonga { display: flex; align-items: center; text-decoration: none; }
+    .nav-moonga-icon { height: 28px; width: auto; opacity: .65; transition: opacity .15s; }
+    .nav-moonga:hover .nav-moonga-icon { opacity: 1; }
+    .nav-brand { display: flex; align-items: center; text-decoration: none; }
+    .nav-logo-full { height: 28px; width: auto; }
     .nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
     .nav-links a { font-size: .75rem; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft); text-decoration: none; transition: color .2s; }
     .nav-links a:hover { color: var(--ink); }
@@ -135,9 +139,14 @@
 
   <nav>
     <div class="nav-inner">
-      <a href="../index.html" class="nav-brand">
-        <img src="../nook-wordmark.svg" alt="Nook" class="nav-logo-full" />
-      </a>
+      <div class="nav-brand-group">
+        <a href="/" class="nav-moonga">
+          <img src="../../favicon.png" alt="Moonga" class="nav-moonga-icon" />
+        </a>
+        <a href="../index.html" class="nav-brand">
+          <img src="../nook-wordmark.svg" alt="Nook" class="nav-logo-full" />
+        </a>
+      </div>
       <ul class="nav-links">
         <li><a href="../index.html">Home</a></li>
         <li><a href="index.html">Blog</a></li>
