@@ -1,6 +1,6 @@
 # Nook
 
-> A virtual co-working app where people join named rooms to focus alongside real people — no camera, no scheduling, no pressure.
+> Nook is a virtual co-working app that lets remote workers, students, and freelancers focus alongside real people in shared rooms — no camera, no scheduling, no pressure. Free on web and Android.
 
 ## Key pages
 - [Home](https://www.moonga.studio/nook/): overview of rooms and features
