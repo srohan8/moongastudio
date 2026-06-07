@@ -1,0 +1,16 @@
+# Nook
+
+> A virtual co-working app where people join named rooms to focus alongside real people — no camera, no scheduling, no pressure.
+
+## Key pages
+- [Home](https://www.moonga.studio/nook/): overview of rooms and features
+- [Privacy Policy](https://www.moonga.studio/nook/privacy.html): what data is collected and how it is used
+- [Terms of Use](https://www.moonga.studio/nook/terms.html): terms governing use of the app
+- [Delete Account](https://www.moonga.studio/nook/delete-account.html): how to delete your account and data
+- [Android app](https://play.google.com/store/apps/details?id=studio.moonga.flow): install on Android
+
+## About
+- Built by Moonga Studio — hello@moonga.studio
+- Free to use; no account required to join open rooms
+- Private rooms require a free account
+- Data processed in EU (Supabase Frankfurt); analytics via PostHog EU

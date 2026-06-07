@@ -1,0 +1,14 @@
+# Moonga Studio
+
+> A small indie studio building calm, focused software for people who want to do their best work.
+
+## Products
+- [Nook](https://www.moonga.studio/nook/): virtual co-working rooms — focus alongside real people, no camera required
+
+## Key pages
+- [Studio home](https://www.moonga.studio/): overview of all products
+- [Nook Privacy Policy](https://www.moonga.studio/nook/privacy.html): data practices for Nook
+- [Nook Terms of Use](https://www.moonga.studio/nook/terms.html): terms for Nook
+
+## Contact
+- hello@moonga.studio
