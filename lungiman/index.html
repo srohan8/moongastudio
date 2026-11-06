@@ -4,8 +4,8 @@
   <meta charset="UTF-8"/>
   <link rel="icon" type="image/png" href="/favicon.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Lungiman — Folklore Action Game · Moonga</title>
-  <meta name="description" content="Lungiman is a folklore action game. Fight yakshis, vetaals, and ancient demons. Coming soon from Moonga."/>
+  <title>Kanjiravanam Chronicles — Kannan's Kerala folklore adventure · Moonga</title>
+  <meta name="description" content="Kannan and the Kanjiravanam Chronicles: an old-school run-and-throw game set in Kerala folklore. Five acts, five corrupted guardians, three buttons. Coming soon to Android from Moonga."/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
   <style>
@@ -355,6 +355,8 @@
     .demon-card.yakshi::before { background: var(--teal-mid); }
     .demon-card.churel::before { background: var(--crimson); }
     .demon-card.theyyam::before { background: var(--gold); }
+    .demon-card.kutti::before { background: var(--flame); }
+    .demon-card.karin::before { background: var(--teal-mid); }
 
     .demon-card:hover {
       border-color: rgba(212,160,32,0.4);
@@ -371,6 +373,8 @@
     .demon-card.yakshi .demon-name { color: #60C0A0; }
     .demon-card.churel .demon-name { color: #D06060; }
     .demon-card.theyyam .demon-name { color: var(--gold); }
+    .demon-card.kutti .demon-name { color: var(--flame); }
+    .demon-card.karin .demon-name { color: #60C0A0; }
 
     .demon-desc {
       font-size: 0.85rem;
@@ -488,6 +492,16 @@
     .footer-links a:hover { color: var(--gold); }
 
     /* ── ANIMATIONS ── */
+
+    /* ── SCREENSHOTS ── */
+    .shots { padding: 6rem 2rem; text-align: center; }
+    .shots-label { font-family:'Cinzel',serif; font-size:0.62rem; letter-spacing:0.28em; text-transform:uppercase; color:var(--gold); opacity:0.7; margin-bottom:1rem; }
+    .shots h2 { font-family:'Cinzel',serif; font-size:clamp(1.6rem,4vw,2.6rem); font-weight:600; margin-bottom:2.5rem; }
+    .shot-grid { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; }
+    .shot-grid figure { border: 1px solid var(--gold-line); border-radius: 10px; overflow: hidden; background: #000; }
+    .shot-grid img { display: block; width: 100%; height: auto; image-rendering: pixelated; }
+    .shot-grid figcaption { padding: 0.5rem 0.8rem; font-size: 0.85rem; color: var(--muted); text-align: left; }
+
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
@@ -510,14 +524,14 @@
 
   <nav>
     <div class="nav-left">
-      <a href="/" style="display:flex;align-items:center;text-decoration:none;"><img src="../logo-dark.svg" alt="Moonga" style="height:28px;width:auto;opacity:0.85;"/></a>
+      <a href="/" style="display:flex;align-items:center;text-decoration:none;"><img src="../logo-light.svg" alt="Moonga" style="height:28px;width:auto;opacity:0.85;filter:brightness(0) invert(1);"/></a>
       <span class="nav-sep">✦</span>
-      <span class="nav-title">Lungiman</span>
+      <span class="nav-title">Kanjiravanam Chronicles</span>
     </div>
     <ul class="nav-links">
       <li><a href="#lore">The World</a></li>
+      <li><a href="#screens">Screenshots</a></li>
       <li><a href="#features">Gameplay</a></li>
-      <li><a href="index.html#notify">Notify Me</a></li>
     </ul>
   </nav>
 
@@ -528,12 +542,12 @@
     <div class="hero-border-top"></div>
     <div class="hero-border-bottom"></div>
 
-    <p class="hero-eyebrow">Moonga &nbsp;·&nbsp; Folklore Action Game</p>
-    <h1>LUNGIMAN</h1>
-    <p class="hero-subtitle">When the night comes alive</p>
+    <p class="hero-eyebrow">Kannan and the</p>
+    <h1 style="font-size:clamp(2.6rem,10vw,8rem);letter-spacing:0.05em;">KANJIRAVANAM</h1>
+    <p class="hero-subtitle">Chronicles</p>
     <p class="hero-tagline">
-      A hero. Ancient demons. The sacred fire of the oldest stories —
-      brought to life in a world you've never seen before.
+      A coconut tapper falls into a sacred grove. Five corrupted guardians.
+      Three buttons: run, jump, throw.
     </p>
 
     <div class="hero-divider">
@@ -542,11 +556,7 @@
       <div class="hero-divider-line"></div>
     </div>
 
-    <div class="notify-form" id="notify">
-      <input class="notify-input" type="email" placeholder="your@email.com"/>
-      <button class="notify-btn">Notify me</button>
-    </div>
-    <div class="coming-soon-badge">Coming Soon — No Release Date Yet</div>
+    <div class="coming-soon-badge" id="notify">Coming soon to Android</div>
   </section>
 
   <!-- LORE -->
@@ -554,36 +564,59 @@
     <div class="lore-inner">
       <div>
         <p class="lore-label">The World</p>
-        <h2>Ancient shadows<br>have always had names</h2>
+        <h2>A sacred grove<br>is breaking its seal</h2>
         <div class="lore-rule"></div>
         <p>
-          The night is not empty. The forests hold old spirits. The rivers carry memory.
-          The dead do not always rest.
+          At the edge of Kerala's backwaters sits the village of Muruthikudi.
+          Beyond it lies Kanjiravanam, the sacred grove. Children are told never to go there after dark.
         </p>
         <p>
-          Lungiman steps into this world — not as an outsider, but as someone who belongs to it.
-          Armed with ancestral knowledge and the fire of ritual, he must face what others
-          cannot even name.
+          Kannan, a coconut tapper, falls deeper into the grove than anyone has gone.
+          The grove's guardian, Kanjiravanam Amma, tells him what is wrong: five sacred trees hold an ancient seal,
+          and the Kazhukan corruption, with its red eyes and rim, is twisting the guardians of each one.
         </p>
         <p>
-          Every demon in Lungiman is drawn from deep folklore traditions. Ancient stories,
-          brought to life in a world you've never seen in a game before.
+          Run through each grove, free its guardian, and bring the trees back to bloom.
+          The journey takes him from a riverside village to a festival gone silent,
+          and all the way down to Pathalam, to meet King Maveli.
         </p>
       </div>
       <div class="demon-cards">
         <div class="demon-card yakshi">
           <div class="demon-name">Yakshi</div>
-          <p class="demon-desc">The spirit of the night palm. Beautiful and terrible, she guards the ancient groves with ruthless purpose.</p>
+          <p class="demon-desc">Act I, the bamboo hollow. One look from her turns your controls around.</p>
         </div>
-        <div class="demon-card churel">
-          <div class="demon-name">Churel</div>
-          <p class="demon-desc">Born of anguish and unfinished grief. She roams the crossroads between the living world and what lies beyond.</p>
+        <div class="demon-card kutti">
+          <div class="demon-name">Kuttichathan</div>
+          <p class="demon-desc">Act II, the abandoned festival. He loves a party. Hit the real one, not the clones.</p>
         </div>
         <div class="demon-card theyyam">
-          <div class="demon-name">Veṭṭakkorumakan</div>
-          <p class="demon-desc">The divine hunter of the hills. Ancient, elemental, and not easily appeased. To fight him is to invite the forest itself.</p>
+          <div class="demon-name">Odiyan</div>
+          <p class="demon-desc">Act III, the foggy pepper hills. A shape-shifter who can only be hurt in the moment he changes.</p>
+        </div>
+        <div class="demon-card karin">
+          <div class="demon-name">Karinkanni</div>
+          <p class="demon-desc">Act IV, the monsoon mangroves. Hit the eye while it is open, and never stand still under her gaze.</p>
+        </div>
+        <div class="demon-card churel">
+          <div class="demon-name">Pey Komban</div>
+          <p class="demon-desc">Act V, the banyan temple grove. An armoured giant. Wait for the moment right after his stomp.</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- SCREENSHOTS -->
+  <section class="shots" id="screens">
+    <p class="shots-label">In the game</p>
+    <h2>Five groves. One coconut tapper.</h2>
+    <div class="shot-grid">
+      <figure><img src="shots/a1.png" alt="Act I: the bamboo hollow" loading="lazy"/><figcaption>Act I · Bamboo hollow</figcaption></figure>
+      <figure><img src="shots/a2.png" alt="Act II: the abandoned festival" loading="lazy"/><figcaption>Act II · Abandoned festival</figcaption></figure>
+      <figure><img src="shots/bike.png" alt="The festival bike ride" loading="lazy"/><figcaption>Act II ride · Festival road</figcaption></figure>
+      <figure><img src="shots/a3.png" alt="Act III: the foggy pepper hills" loading="lazy"/><figcaption>Act III · Foggy pepper hills</figcaption></figure>
+      <figure><img src="shots/a4.png" alt="Act IV: the monsoon mangroves" loading="lazy"/><figcaption>Act IV · Monsoon mangroves</figcaption></figure>
+      <figure><img src="shots/a5.png" alt="Act V: the banyan temple grove" loading="lazy"/><figcaption>Act V · Banyan temple grove</figcaption></figure>
     </div>
   </section>
 
@@ -591,38 +624,38 @@
   <section class="features" id="features">
     <div class="features-inner">
       <p style="font-family:'Cinzel',serif;font-size:0.62rem;letter-spacing:0.28em;color:var(--gold);opacity:0.7;margin-bottom:1rem;">Gameplay</p>
-      <h2>Fight with fire.<br>Move like the night.</h2>
-      <p class="features-sub">Built on ancient folklore. Designed for modern play.</p>
+      <h2>Run left to right.<br>Throw coconuts.</h2>
+      <p class="features-sub">Old-school simplicity. Kerala folklore. Made for two thumbs on a phone.</p>
       <div class="feature-grid">
         <div class="feat-card">
-          <div class="feat-icon">🔥</div>
-          <div class="feat-title">Theyyam Combat</div>
-          <p class="feat-desc">Draw on ancient sacred fire rituals. Each combat form channels a different deity's power.</p>
-        </div>
-        <div class="feat-card">
-          <div class="feat-icon">🌙</div>
-          <div class="feat-title">Night World</div>
-          <p class="feat-desc">The world shifts at dusk. New enemies emerge. New paths open. The demon hierarchy changes with the moon.</p>
-        </div>
-        <div class="feat-card">
-          <div class="feat-icon">📖</div>
-          <div class="feat-title">Living Folklore</div>
-          <p class="feat-desc">Every creature, ritual, and place in the game is drawn from real myth and oral tradition. Stories that have been told for centuries.</p>
-        </div>
-        <div class="feat-card">
-          <div class="feat-icon">🥁</div>
-          <div class="feat-title">Ritual Sound</div>
-          <p class="feat-desc">Traditional drums. Ancient instruments. The soundscape is built from the music of old ritual and sacred performance.</p>
+          <div class="feat-icon">🥥</div>
+          <div class="feat-title">Three Buttons</div>
+          <p class="feat-desc">Move, jump, throw a coconut. Hold to keep throwing. That is the whole game, easy to pick up and hard to put down.</p>
         </div>
         <div class="feat-card">
           <div class="feat-icon">🌿</div>
-          <div class="feat-title">Sacred Landscapes</div>
-          <p class="feat-desc">Ancient groves. Fields under monsoon skies. Hill shrines at dusk. A world you've never seen in a game.</p>
+          <div class="feat-title">Five Acts and a Prologue</div>
+          <p class="feat-desc">A riverside village, a bamboo hollow, an abandoned festival, foggy pepper hills, monsoon mangroves and a banyan temple grove.</p>
         </div>
         <div class="feat-card">
-          <div class="feat-icon">⚡</div>
-          <div class="feat-title">Fast Action</div>
-          <p class="feat-desc">Fluid, precise combat with deep progression. Easy to pick up — hard to master — impossible to forget.</p>
+          <div class="feat-icon">👁</div>
+          <div class="feat-title">Folklore Bosses</div>
+          <p class="feat-desc">Yakshi, Kuttichathan, Odiyan and more. Each guardian has one trick to learn, and you can learn it in one try.</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon">☕</div>
+          <div class="feat-title">Tea Stall Checkpoints</div>
+          <p class="feat-desc">Walk past a chayakada and it saves your place and refills your coconuts. No buttons, no menus.</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon">🛵</div>
+          <div class="feat-title">Surprises on the Way</div>
+          <p class="feat-desc">A bike ride through the festival road, a fever-dream disco, and a rope-swinging journey down to Pathalam.</p>
+        </div>
+        <div class="feat-card">
+          <div class="feat-icon">🎨</div>
+          <div class="feat-title">Pixel Art, Kerala Style</div>
+          <p class="feat-desc">Hand-drawn pixel art with its own palette for every act, and a game that plays fully offline.</p>
         </div>
       </div>
     </div>
@@ -630,7 +663,7 @@
 
   <!-- FOOTER -->
   <footer>
-    <span class="footer-left" style="display:flex;align-items:center;gap:0.5rem;"><img src="../logo-dark.svg" alt="Moonga" style="height:22px;width:auto;opacity:0.55;"/> <span style="margin-left:0.4rem;">© 2026 Moonga · Lungiman</span></span>
+    <span class="footer-left" style="display:flex;align-items:center;gap:0.5rem;"><img src="../logo-light.svg" alt="Moonga" style="height:22px;width:auto;opacity:0.55;filter:brightness(0) invert(1);"/> <span style="margin-left:0.4rem;">© 2026 Moonga · Kanjiravanam Chronicles</span></span>
     <ul class="footer-links">
       <li><a href="/">← Moonga</a></li>
       <li><a href="/nook/">Nook</a></li>
@@ -638,12 +671,7 @@
     </ul>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-    // Simple notify form
-    const btn = document.querySelector('.notify-btn');
-    const input = document.querySelector('.notify-input');
-    btn.addEventListener('click', () => {
-      if (input.value && input.value.includes('@')) {
-        btn.textContent = '✓ Done';
-        btn.style.background = '#1A5848';
-     
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+
+</body>
+</html>
