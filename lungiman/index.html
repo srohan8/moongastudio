@@ -502,6 +502,10 @@
     .shot-grid img { display: block; width: 100%; height: auto; image-rendering: pixelated; }
     .shot-grid figcaption { padding: 0.5rem 0.8rem; font-size: 0.85rem; color: var(--muted); text-align: left; }
 
+
+    .hero-logo { margin-bottom: 1.5rem; animation: fadeUp 1s 0.2s ease both; }
+    .hero-logo img { display: block; width: min(92vw, 760px); height: auto; filter: drop-shadow(0 8px 30px rgba(200,72,32,0.35)); }
+
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
@@ -513,6 +517,8 @@
     }
 
     @media (max-width: 768px) {
+      .nav-title, .nav-sep { display: none; }
+      nav { padding: 1rem 1.2rem; }
       nav { padding: 1rem 1.5rem; }
       .lore-inner { grid-template-columns: 1fr; gap: 3rem; }
       .feature-grid { grid-template-columns: 1fr; }
@@ -542,9 +548,7 @@
     <div class="hero-border-top"></div>
     <div class="hero-border-bottom"></div>
 
-    <p class="hero-eyebrow">Kannan and the</p>
-    <h1 style="font-size:clamp(2.6rem,10vw,8rem);letter-spacing:0.05em;">KANJIRAVANAM</h1>
-    <p class="hero-subtitle">Chronicles</p>
+    <h1 class="hero-logo"><img src="logo.png" alt="Kannan and the Kanjiravanam Chronicles"/></h1>
     <p class="hero-tagline">
       A coconut tapper falls into a sacred grove. Five corrupted guardians.
       Three buttons: run, jump, throw.
